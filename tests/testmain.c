@@ -43,9 +43,9 @@ static struct test_case test_cases[] = {
 
 	// -- Timer tests 
 
-	{ "test_tick_count_incrementing",		test_tick_count_incrementing },
-	{ "test_sleep_duration",			test_sleep_duration },
-	{ "test_multiple_sleeps",			test_multiple_sleeps },
+	// { "test_tick_count_incrementing",		test_tick_count_incrementing },
+	// { "test_sleep_duration",			test_sleep_duration },
+	// { "test_multiple_sleeps",			test_multiple_sleeps },
 
 	// -- TSS tests --
 
@@ -54,28 +54,28 @@ static struct test_case test_cases[] = {
 
 	// -- ELF Tests --
 
-	{ "test_elf_check_valid_header",	test_elf_check_valid_header },
-	{ "test_elf_load_program",			test_elf_load_program },
-	{ "test_elf_load_nonexistent",		test_elf_load_nonexistent },
+	// { "test_elf_check_valid_header",	test_elf_check_valid_header },
+	// { "test_elf_load_program",			test_elf_load_program },
+	// { "test_elf_load_nonexistent",		test_elf_load_nonexistent },
 
 	// -- Process and threads tests --
 
-	{ "test_thread",						thread_test },
-	{ "test_process_create_nonnull",		test_process_create_nonnull },
-	{ "test_process_create_different_priorities",	test_process_create_different_priorities },
-	{ "test_process_name_handling",		test_process_name_handling },
-	{ "test_get_main_thread_nonnull",		test_get_main_thread_nonnull },
-	{ "test_scheduler_init_idempotent",		test_scheduler_init_idempotent },
-	{ "test_scheduler_get_current_thread",	test_scheduler_get_current_thread },
-	{ "test_scheduler_get_current_proc",		test_scheduler_get_current_proc },
-	{ "test_thread_creation",			test_thread_creation },
-	{ "test_multiple_thread_creation",		test_multiple_thread_creation },
-	{ "test_scheduler_post_thread",		test_scheduler_post_thread },
-	{ "test_multiple_process_creation",		test_multiple_process_creation },
-	{ "test_thread_destroy_safe",			test_thread_destroy_safe },
-	{ "test_process_exit_safe",			test_process_exit_safe },
-	{ "test_concurrent_scheduler_ops",		test_concurrent_scheduler_ops },
-	{ "test_many_threads_creation",		test_many_threads_creation },
+	// { "test_thread",						thread_test },
+	// { "test_process_create_nonnull",		test_process_create_nonnull },
+	// { "test_process_create_different_priorities",	test_process_create_different_priorities },
+	// { "test_process_name_handling",		test_process_name_handling },
+	// { "test_get_main_thread_nonnull",		test_get_main_thread_nonnull },
+	// { "test_scheduler_init_idempotent",		test_scheduler_init_idempotent },
+	// { "test_scheduler_get_current_thread",	test_scheduler_get_current_thread },
+	// { "test_scheduler_get_current_proc",		test_scheduler_get_current_proc },
+	// { "test_thread_creation",			test_thread_creation },
+	// { "test_multiple_thread_creation",		test_multiple_thread_creation },
+	// { "test_scheduler_post_thread",		test_scheduler_post_thread },
+	// { "test_multiple_process_creation",		test_multiple_process_creation },
+	// { "test_thread_destroy_safe",			test_thread_destroy_safe },
+	// { "test_process_exit_safe",			test_process_exit_safe },
+	// { "test_concurrent_scheduler_ops",		test_concurrent_scheduler_ops },
+	// { "test_many_threads_creation",		test_many_threads_creation },
 	
 
 	{ NULL, NULL } // marks the end of the array

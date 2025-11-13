@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "vfs.h": "c",
+    "elf.h": "c"
+  }
+}

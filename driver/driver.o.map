@@ -1,0 +1,592 @@
+
+Discarded input sections
+
+ .group         0x0000000000000000        0xc build/./dma.o
+ .group         0x0000000000000000        0xc build/./dma.o
+ .group         0x0000000000000000        0xc build/./dma.o
+ .group         0x0000000000000000        0xc build/./dma.o
+ .group         0x0000000000000000        0xc build/./dma.o
+ .group         0x0000000000000000        0xc build/./dma.o
+ .group         0x0000000000000000        0xc build/./dma.o
+ .debug_macro   0x0000000000000000      0x844 build/./dma.o
+ .debug_macro   0x0000000000000000       0x16 build/./dma.o
+ .debug_macro   0x0000000000000000       0x82 build/./dma.o
+ .debug_macro   0x0000000000000000       0x16 build/./dma.o
+ .debug_macro   0x0000000000000000       0x22 build/./dma.o
+ .debug_macro   0x0000000000000000       0x22 build/./dma.o
+ .debug_macro   0x0000000000000000       0x64 build/./dma.o
+ .group         0x0000000000000000        0xc build/./fdc.o
+ .group         0x0000000000000000        0xc build/./fdc.o
+ .group         0x0000000000000000        0xc build/./fdc.o
+ .group         0x0000000000000000        0xc build/./fdc.o
+ .group         0x0000000000000000        0xc build/./fdc.o
+ .group         0x0000000000000000        0xc build/./fdc.o
+ .group         0x0000000000000000        0xc build/./fdc.o
+ .group         0x0000000000000000        0xc build/./fdc.o
+ .group         0x0000000000000000        0xc build/./fdc.o
+ .debug_macro   0x0000000000000000      0x844 build/./fdc.o
+ .debug_macro   0x0000000000000000       0x16 build/./fdc.o
+ .debug_macro   0x0000000000000000       0x82 build/./fdc.o
+ .debug_macro   0x0000000000000000       0x16 build/./fdc.o
+ .debug_macro   0x0000000000000000       0x22 build/./fdc.o
+ .debug_macro   0x0000000000000000       0x50 build/./fdc.o
+ .debug_macro   0x0000000000000000       0x22 build/./fdc.o
+ .debug_macro   0x0000000000000000       0x3a build/./fdc.o
+ .debug_macro   0x0000000000000000       0x64 build/./fdc.o
+ .group         0x0000000000000000        0xc build/./pic.o
+ .group         0x0000000000000000        0xc build/./pic.o
+ .group         0x0000000000000000        0xc build/./pic.o
+ .group         0x0000000000000000        0xc build/./pic.o
+ .debug_macro   0x0000000000000000      0x844 build/./pic.o
+ .debug_macro   0x0000000000000000       0x16 build/./pic.o
+ .debug_macro   0x0000000000000000       0x82 build/./pic.o
+ .debug_macro   0x0000000000000000       0x16 build/./pic.o
+ .group         0x0000000000000000        0xc build/./serial.o
+ .group         0x0000000000000000        0xc build/./serial.o
+ .group         0x0000000000000000        0xc build/./serial.o
+ .group         0x0000000000000000        0xc build/./serial.o
+ .group         0x0000000000000000        0xc build/./serial.o
+ .group         0x0000000000000000        0xc build/./serial.o
+ .group         0x0000000000000000        0xc build/./serial.o
+ .group         0x0000000000000000        0xc build/./serial.o
+ .group         0x0000000000000000        0xc build/./serial.o
+ .group         0x0000000000000000        0xc build/./serial.o
+ .debug_macro   0x0000000000000000      0x844 build/./serial.o
+ .debug_macro   0x0000000000000000       0x16 build/./serial.o
+ .debug_macro   0x0000000000000000       0x82 build/./serial.o
+ .debug_macro   0x0000000000000000       0x22 build/./serial.o
+ .debug_macro   0x0000000000000000       0x16 build/./serial.o
+ .debug_macro   0x0000000000000000       0x52 build/./serial.o
+ .debug_macro   0x0000000000000000       0x50 build/./serial.o
+ .debug_macro   0x0000000000000000       0x22 build/./serial.o
+ .debug_macro   0x0000000000000000       0x3a build/./serial.o
+ .debug_macro   0x0000000000000000       0x64 build/./serial.o
+ .group         0x0000000000000000        0xc build/./timer.o
+ .group         0x0000000000000000        0xc build/./timer.o
+ .group         0x0000000000000000        0xc build/./timer.o
+ .group         0x0000000000000000        0xc build/./timer.o
+ .group         0x0000000000000000        0xc build/./timer.o
+ .group         0x0000000000000000        0xc build/./timer.o
+ .group         0x0000000000000000        0xc build/./timer.o
+ .group         0x0000000000000000        0xc build/./timer.o
+ .debug_macro   0x0000000000000000      0x844 build/./timer.o
+ .debug_macro   0x0000000000000000       0x16 build/./timer.o
+ .debug_macro   0x0000000000000000       0x82 build/./timer.o
+ .debug_macro   0x0000000000000000       0x16 build/./timer.o
+ .debug_macro   0x0000000000000000       0x22 build/./timer.o
+ .debug_macro   0x0000000000000000       0x94 build/./timer.o
+ .debug_macro   0x0000000000000000       0x52 build/./timer.o
+ .debug_macro   0x0000000000000000       0x50 build/./timer.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD build/./block.o
+LOAD build/./dma.o
+LOAD build/./fdc.o
+LOAD build/./pic.o
+LOAD build/./serial.o
+LOAD build/./timer.o
+
+.interp
+ *(.interp)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rel.text
+ *(.rel.text)
+
+.rel.fini
+ *(.rel.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+
+.rel.data.rel.ro
+ *(.rel.data.rel.ro)
+
+.rel.data
+ *(.rel.data)
+
+.rel.tdata
+ *(.rel.tdata)
+
+.rel.tbss
+ *(.rel.tbss)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rel.ifunc
+ *(.rel.ifunc)
+
+.rel.plt
+ *(.rel.plt)
+
+.relr.dyn
+ *(.relr.dyn)
+
+.init
+ *(SORT_NONE(.init))
+
+.plt
+ *(.plt)
+
+.plt.got
+ *(.plt.got)
+
+.plt.sec
+ *(.plt.sec)
+
+.text           0x0000000000000000     0x1564
+ *(.text .stub)
+ .text          0x0000000000000000      0x44b build/./block.o
+                0x0000000000000000                blkdev_register
+                0x0000000000000286                blkdev_get_by_name
+                0x0000000000000376                blkread
+ .text          0x000000000000044b      0x55b build/./dma.o
+                0x000000000000046a                dma_set_address
+                0x0000000000000549                dma_set_count
+                0x0000000000000628                dma_set_external_pagereg
+                0x00000000000006df                dma_set_mode
+                0x000000000000079c                dma_setup_read
+                0x00000000000007bd                dma_setup_write
+                0x00000000000007de                dma_mask_channel
+                0x0000000000000877                dma_unmask_channel
+                0x000000000000090a                dma_unmask_all
+                0x000000000000091c                dma_reset_flipflop
+                0x000000000000094b                dma_reset
+                0x000000000000097a                dma_disable
+ .text          0x00000000000009a6      0x7cb build/./fdc.o
+                0x0000000000000f09                fdc_init
+                0x0000000000000f6b                fdc_reset
+                0x0000000000000fd9                fdc_read_sector
+                0x0000000000001096                fdc_lba_to_chs
+                0x0000000000001145                fdc_set_drive
+                0x0000000000001165                fdc_get_drive
+ .text          0x0000000000001171       0xf1 build/./pic.o
+                0x0000000000001190                pic_init
+                0x0000000000001232                pic_send_eoi
+ .text          0x0000000000001262      0x2fc build/./serial.o
+                0x000000000000129e                serial_init
+                0x0000000000001383                serial_putc
+                0x00000000000013bf                serial_puts
+                0x00000000000013fe                serial_getc
+ .text          0x000000000000155e        0x6 build/./timer.o
+                0x000000000000155e                sleep
+ *(.gnu.warning)
+
+.fini
+ *(SORT_NONE(.fini))
+
+.rodata         0x0000000000000000      0x3d2
+ *(.rodata)
+ .rodata        0x0000000000000000      0x200 build/./block.o
+ .rodata        0x0000000000000200      0x160 build/./dma.o
+ .rodata        0x0000000000000360        0x4 build/./fdc.o
+ .rodata        0x0000000000000364       0x6e build/./serial.o
+
+.rodata1
+ *(.rodata1)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame       0x0000000000000000      0x814
+ *(.eh_frame)
+ .eh_frame      0x0000000000000000       0x78 build/./block.o
+ .eh_frame      0x0000000000000078      0x1b8 build/./dma.o
+ .eh_frame      0x0000000000000230      0x35c build/./fdc.o
+ .eh_frame      0x000000000000058c       0x78 build/./pic.o
+ .eh_frame      0x0000000000000604      0x1d8 build/./serial.o
+ .eh_frame      0x00000000000007dc       0x38 build/./timer.o
+
+.gcc_except_table
+ *(.gcc_except_table)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges)
+
+.eh_frame
+ *(.eh_frame)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table)
+
+.exception_ranges
+ *(.exception_ranges)
+
+.tdata
+ *(.tdata)
+
+.tbss
+ *(.tbss)
+
+.jcr
+ *(.jcr)
+
+.dynamic
+ *(.dynamic)
+
+.got
+ *(.got)
+
+.got.plt
+ *(.got.plt)
+
+.data           0x0000000000000000        0x4
+ *(.data)
+ .data          0x0000000000000000        0x4 build/./block.o
+ .data          0x0000000000000004        0x0 build/./dma.o
+ .data          0x0000000000000004        0x0 build/./fdc.o
+ .data          0x0000000000000004        0x0 build/./pic.o
+ .data          0x0000000000000004        0x0 build/./serial.o
+ .data          0x0000000000000004        0x0 build/./timer.o
+
+.data1
+ *(.data1)
+
+.bss            0x0000000000000000       0x15
+ *(.bss)
+ .bss           0x0000000000000000        0x8 build/./block.o
+ .bss           0x0000000000000008        0x0 build/./dma.o
+ .bss           0x0000000000000008        0xc build/./fdc.o
+ .bss           0x0000000000000014        0x0 build/./pic.o
+ .bss           0x0000000000000014        0x1 build/./serial.o
+ .bss           0x0000000000000015        0x0 build/./timer.o
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000      0x114
+ *(.comment)
+ .comment       0x0000000000000000       0x2e build/./block.o
+ .comment       0x000000000000002e       0x2e build/./dma.o
+ .comment       0x000000000000005c       0x2e build/./fdc.o
+ .comment       0x000000000000008a       0x2e build/./pic.o
+ .comment       0x00000000000000b8       0x2e build/./serial.o
+ .comment       0x00000000000000e6       0x2e build/./timer.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./block.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./block.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./block.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./block.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./block.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./block.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./block.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./block.o
+
+.note.GNU-stack
+                0x0000000000000000        0x0
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/./block.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/./dma.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/./fdc.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/./pic.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/./serial.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/./timer.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./dma.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./dma.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./dma.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./fdc.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./fdc.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./fdc.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./fdc.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./fdc.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./fdc.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./pic.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./pic.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./serial.o
+
+.gnu.build.attributes
+ *(.gnu.build.attributes)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000       0xc0
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 build/./block.o
+ .debug_aranges
+                0x0000000000000020       0x20 build/./dma.o
+ .debug_aranges
+                0x0000000000000040       0x20 build/./fdc.o
+ .debug_aranges
+                0x0000000000000060       0x20 build/./pic.o
+ .debug_aranges
+                0x0000000000000080       0x20 build/./serial.o
+ .debug_aranges
+                0x00000000000000a0       0x20 build/./timer.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000     0x17eb
+ *(.debug_info)
+ .debug_info    0x0000000000000000      0x3c8 build/./block.o
+ .debug_info    0x00000000000003c8      0x3e7 build/./dma.o
+ .debug_info    0x00000000000007af      0xa15 build/./fdc.o
+ .debug_info    0x00000000000011c4      0x106 build/./pic.o
+ .debug_info    0x00000000000012ca      0x48b build/./serial.o
+ .debug_info    0x0000000000001755       0x96 build/./timer.o
+
+.debug_abbrev   0x0000000000000000      0x8eb
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x191 build/./block.o
+ .debug_abbrev  0x0000000000000191      0x123 build/./dma.o
+ .debug_abbrev  0x00000000000002b4      0x362 build/./fdc.o
+ .debug_abbrev  0x0000000000000616       0x81 build/./pic.o
+ .debug_abbrev  0x0000000000000697      0x1ed build/./serial.o
+ .debug_abbrev  0x0000000000000884       0x67 build/./timer.o
+
+.debug_line     0x0000000000000000     0x1157
+ *(.debug_line)
+ .debug_line    0x0000000000000000      0x35d build/./block.o
+ .debug_line    0x000000000000035d      0x3f6 build/./dma.o
+ .debug_line    0x0000000000000753      0x4ca build/./fdc.o
+ .debug_line    0x0000000000000c1d      0x14c build/./pic.o
+ .debug_line    0x0000000000000d69      0x29e build/./serial.o
+ .debug_line    0x0000000000001007      0x150 build/./timer.o
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str      0x0000000000000000    0x16aea
+ *(.debug_str)
+ .debug_str     0x0000000000000000     0x34e0 build/./block.o
+ .debug_str     0x00000000000034e0     0x3f09 build/./dma.o
+ .debug_str     0x00000000000073e9     0x4e28 build/./fdc.o
+ .debug_str     0x000000000000c211     0x32f6 build/./pic.o
+ .debug_str     0x000000000000f507     0x41c5 build/./serial.o
+ .debug_str     0x00000000000136cc     0x341e build/./timer.o
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_addr
+ *(.debug_addr)
+
+.debug_line_str
+ *(.debug_line_str)
+
+.debug_loclists
+ *(.debug_loclists)
+
+.debug_macro    0x0000000000000000      0x390
+ *(.debug_macro)
+ .debug_macro   0x0000000000000000       0xac build/./block.o
+ .debug_macro   0x00000000000000ac       0xaa build/./dma.o
+ .debug_macro   0x0000000000000156       0xdd build/./fdc.o
+ .debug_macro   0x0000000000000233       0x4a build/./pic.o
+ .debug_macro   0x000000000000027d       0xb3 build/./serial.o
+ .debug_macro   0x0000000000000330       0x60 build/./timer.o
+
+.debug_names
+ *(.debug_names)
+
+.debug_rnglists
+ *(.debug_rnglists)
+
+.debug_str_offsets
+ *(.debug_str_offsets)
+
+.debug_sup
+ *(.debug_sup)
+
+.gnu.attributes
+ *(.gnu.attributes)
+OUTPUT(driver.o elf32-i386)
+
+.debug_macro    0x0000000000000000      0x844
+ .debug_macro   0x0000000000000000      0x844 build/./block.o
+
+.debug_macro    0x0000000000000000       0x16
+ .debug_macro   0x0000000000000000       0x16 build/./block.o
+
+.debug_macro    0x0000000000000000       0x82
+ .debug_macro   0x0000000000000000       0x82 build/./block.o
+
+.debug_macro    0x0000000000000000       0x16
+ .debug_macro   0x0000000000000000       0x16 build/./block.o
+
+.debug_macro    0x0000000000000000       0x22
+ .debug_macro   0x0000000000000000       0x22 build/./block.o
+
+.debug_macro    0x0000000000000000       0x22
+ .debug_macro   0x0000000000000000       0x22 build/./block.o
+
+.debug_macro    0x0000000000000000       0x40
+ .debug_macro   0x0000000000000000       0x40 build/./block.o
+
+.debug_macro    0x0000000000000000       0x64
+ .debug_macro   0x0000000000000000       0x64 build/./block.o
+
+.debug_macro    0x0000000000000000      0x1bd
+ .debug_macro   0x0000000000000000      0x1bd build/./dma.o
+
+.debug_macro    0x0000000000000000       0x50
+ .debug_macro   0x0000000000000000       0x50 build/./dma.o
+
+.debug_macro    0x0000000000000000       0x3a
+ .debug_macro   0x0000000000000000       0x3a build/./dma.o
+
+.debug_macro    0x0000000000000000      0x1d2
+ .debug_macro   0x0000000000000000      0x1d2 build/./fdc.o
+
+.debug_macro    0x0000000000000000      0x1c3
+ .debug_macro   0x0000000000000000      0x1c3 build/./fdc.o
+
+.debug_macro    0x0000000000000000       0x94
+ .debug_macro   0x0000000000000000       0x94 build/./fdc.o
+
+.debug_macro    0x0000000000000000       0x10
+ .debug_macro   0x0000000000000000       0x10 build/./fdc.o
+
+.debug_macro    0x0000000000000000       0x52
+ .debug_macro   0x0000000000000000       0x52 build/./fdc.o
+
+.debug_macro    0x0000000000000000       0x58
+ .debug_macro   0x0000000000000000       0x58 build/./fdc.o
+
+.debug_macro    0x0000000000000000       0x4a
+ .debug_macro   0x0000000000000000       0x4a build/./pic.o
+
+.debug_macro    0x0000000000000000       0xa6
+ .debug_macro   0x0000000000000000       0xa6 build/./pic.o
+
+.debug_macro    0x0000000000000000      0x1e3
+ .debug_macro   0x0000000000000000      0x1e3 build/./serial.o

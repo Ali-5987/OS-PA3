@@ -1,0 +1,128 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x0000000000007c00                . = 0x7c00
+
+.text           0x0000000000007c00      0x1d9
+ *(.text)
+ .text          0x0000000000007c00       0xc1 build/boot.o
+                0x0000000000007c00                __bootsector_start
+                0x0000000000007c1a                gdt_desc
+                0x0000000000007c71                switch_to_protected
+ .text          0x0000000000007cc1       0x40 build/boot_print.o
+                0x0000000000007cc1                boot_print_line
+                0x0000000000007cc4                boot_print_newline
+                0x0000000000007cce                boot_print_string
+                0x0000000000007cdc                boot_print_hex
+ .text          0x0000000000007d01       0x33 build/protected_start.o
+                0x0000000000007d01                protected_start
+ .text          0x0000000000007d34       0x75 build/mmap.o
+                0x0000000000007d34                get_bios_e820_mmap
+ .text          0x0000000000007da9       0x30 build/memsize.o
+                0x0000000000007da9                get_bios_e801_memsize
+ .text          0x0000000000007dd9        0x0 build/stage2.o
+
+.iplt           0x0000000000007dd9        0x0
+ .iplt          0x0000000000007dd9        0x0 build/boot.o
+
+.data           0x0000000000007dd9        0x0
+ *(.data)
+ .data          0x0000000000007dd9        0x0 build/boot.o
+ .data          0x0000000000007dd9        0x0 build/boot_print.o
+ .data          0x0000000000007dd9        0x0 build/protected_start.o
+ .data          0x0000000000007dd9        0x0 build/mmap.o
+ .data          0x0000000000007dd9        0x0 build/memsize.o
+ .data          0x0000000000007dd9        0x0 build/stage2.o
+
+.got            0x0000000000007ddc        0x0
+ .got           0x0000000000007ddc        0x0 build/boot.o
+
+.got.plt        0x0000000000007ddc        0x0
+ .got.plt       0x0000000000007ddc        0x0 build/boot.o
+
+.igot.plt       0x0000000000007ddc        0x0
+ .igot.plt      0x0000000000007ddc        0x0 build/boot.o
+                0x0000000000007dfe                . = 0x7dfe
+
+.sig            0x0000000000007dfe        0x2
+                0x0000000000007dfe        0x2 SHORT 0xaa55
+
+.stage2         0x0000000000007e00      0x129
+ *(.stage2)
+ .stage2        0x0000000000007e00      0x129 build/stage2.o
+                0x0000000000007e00                stage2
+LOAD build/boot.o
+LOAD build/boot_print.o
+LOAD build/protected_start.o
+LOAD build/mmap.o
+LOAD build/memsize.o
+LOAD build/stage2.o
+OUTPUT(build/bootloader.elf elf32-i386)
+
+.rel.dyn        0x0000000000007f2c        0x0
+ .rel.got       0x0000000000007f2c        0x0 build/boot.o
+ .rel.iplt      0x0000000000007f2c        0x0 build/boot.o
+
+.bss            0x0000000000007f29        0x0
+ .bss           0x0000000000007f29        0x0 build/boot.o
+ .bss           0x0000000000007f29        0x0 build/boot_print.o
+ .bss           0x0000000000007f29        0x0 build/protected_start.o
+ .bss           0x0000000000007f29        0x0 build/mmap.o
+ .bss           0x0000000000007f29        0x0 build/memsize.o
+ .bss           0x0000000000007f29        0x0 build/stage2.o
+
+.debug_line     0x0000000000000000      0x269
+ .debug_line    0x0000000000000000       0x65 build/boot.o
+ .debug_line    0x0000000000000065       0x60 build/boot_print.o
+ .debug_line    0x00000000000000c5       0x50 build/protected_start.o
+ .debug_line    0x0000000000000115       0x5a build/mmap.o
+ .debug_line    0x000000000000016f       0x4e build/memsize.o
+ .debug_line    0x00000000000001bd       0xac build/stage2.o
+
+.debug_info     0x0000000000000000       0xe2
+ .debug_info    0x0000000000000000       0x24 build/boot.o
+ .debug_info    0x0000000000000024       0x26 build/boot_print.o
+ .debug_info    0x000000000000004a       0x26 build/protected_start.o
+ .debug_info    0x0000000000000070       0x26 build/mmap.o
+ .debug_info    0x0000000000000096       0x26 build/memsize.o
+ .debug_info    0x00000000000000bc       0x26 build/stage2.o
+
+.debug_abbrev   0x0000000000000000       0x78
+ .debug_abbrev  0x0000000000000000       0x14 build/boot.o
+ .debug_abbrev  0x0000000000000014       0x14 build/boot_print.o
+ .debug_abbrev  0x0000000000000028       0x14 build/protected_start.o
+ .debug_abbrev  0x000000000000003c       0x14 build/mmap.o
+ .debug_abbrev  0x0000000000000050       0x14 build/memsize.o
+ .debug_abbrev  0x0000000000000064       0x14 build/stage2.o
+
+.debug_aranges  0x0000000000000000       0xc0
+ .debug_aranges
+                0x0000000000000000       0x20 build/boot.o
+ .debug_aranges
+                0x0000000000000020       0x20 build/boot_print.o
+ .debug_aranges
+                0x0000000000000040       0x20 build/protected_start.o
+ .debug_aranges
+                0x0000000000000060       0x20 build/mmap.o
+ .debug_aranges
+                0x0000000000000080       0x20 build/memsize.o
+ .debug_aranges
+                0x00000000000000a0       0x20 build/stage2.o
+
+.debug_str      0x0000000000000000       0x71
+ .debug_str     0x0000000000000000       0x38 build/boot.o
+ .debug_str     0x0000000000000038        0xd build/boot_print.o
+                                         0x3e (size before relaxing)
+ .debug_str     0x0000000000000045       0x12 build/protected_start.o
+                                         0x43 (size before relaxing)
+ .debug_str     0x0000000000000057        0x7 build/mmap.o
+                                         0x38 (size before relaxing)
+ .debug_str     0x000000000000005e        0xa build/memsize.o
+                                         0x3b (size before relaxing)
+ .debug_str     0x0000000000000068        0x9 build/stage2.o
+                                         0x3a (size before relaxing)

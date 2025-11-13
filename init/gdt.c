@@ -99,30 +99,30 @@ void gdt_init_flat_protected()
 
     // Setup a tss entry
 
-    // tss_t   *tss = tss_get_global();
-    // memset(tss, 0x0, sizeof(tss_t));
+    tss_t   *tss = tss_get_global();
+    memset(tss, 0x0, sizeof(tss_t));
 
-    // //! setup the ss0 and esp0 for the tss
-    // tss->ss0  = GDT_SEG_OFFSET(GDT_KERNEL_DATA_ENTRY); // kernel data segment
-    // tss->esp0 = 0x0; // initial stack pointer, will be set later
+    //! setup the ss0 and esp0 for the tss
+    tss->ss0  = GDT_SEG_OFFSET(GDT_KERNEL_DATA_ENTRY); // kernel data segment
+    tss->esp0 = 0x0; // initial stack pointer, will be set later
 
-    // /* the rest of the segments are set to the kernel code and data segments,
-    //     however, with the RPL set to 3 this is done to allow user mode tasks to
-    //     switch to kernel mode */
-    // tss->cs = GDT_SEG_OFFSET(GDT_KERNEL_CODE_ENTRY) | 0x3;
-    // tss->ss = tss->ds = GDT_SEG_OFFSET(GDT_KERNEL_DATA_ENTRY) | 0x3;
-    // tss->es = tss->fs = tss->gs = GDT_SEG_OFFSET(GDT_KERNEL_DATA_ENTRY) | 0x3;
+    /* the rest of the segments are set to the kernel code and data segments,
+        however, with the RPL set to 3 this is done to allow user mode tasks to
+        switch to kernel mode */
+    tss->cs = GDT_SEG_OFFSET(GDT_KERNEL_CODE_ENTRY) | 0x3;
+    tss->ss = tss->ds = GDT_SEG_OFFSET(GDT_KERNEL_DATA_ENTRY) | 0x3;
+    tss->es = tss->fs = tss->gs = GDT_SEG_OFFSET(GDT_KERNEL_DATA_ENTRY) | 0x3;
 
-    // // create the TSS entry in the GDT
-    // create_gdt_entry(&gdt[ GDT_TSS_ENTRY ], (uint32_t)tss, sizeof(tss_t) - 1,
-    //                  GDT_ACCESS_PRESENT | GDT_ACCESS_RING3 | GDT_ACCESS_TSS32,
-    //                  TSS_GRANULARITY);
+    // create the TSS entry in the GDT
+    create_gdt_entry(&gdt[ GDT_TSS_ENTRY ], (uint32_t)tss, sizeof(tss_t) - 1,
+                     GDT_ACCESS_PRESENT | GDT_ACCESS_RING3 | GDT_ACCESS_TSS32,
+                     TSS_GRANULARITY);
 
     // Load the GDT into the GDTR register
     load_gdt((uint32_t)&gdt_ptr);
 
     // Flush the TSS to ensure it is loaded
-    // tss_flush(GDT_SEG_OFFSET(GDT_TSS_ENTRY) | 0x3); // Load TSS with RPL 3
+    tss_flush(GDT_SEG_OFFSET(GDT_TSS_ENTRY) | 0x3); // Load TSS with RPL 3
 
 }
 
