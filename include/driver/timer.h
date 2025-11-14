@@ -19,6 +19,8 @@
 //-----------------------------------------------------------------------------
 
 // Defines for the Programmable Interval Timer (PIT) ports
+extern uint32_t ticks;
+extern uint32_t freq;
 #define PIT_CHANNEL0_DATA_PORT 		0x40
 #define PIT_CHANNEL1_DATA_PORT 		0x41
 #define PIT_CHANNEL2_DATA_PORT 		0x42
@@ -76,7 +78,7 @@ uint32_t get_system_tick_count(void);
  * @param ms The number of milliseconds to suspend the thread.
  */
 void sleep(uint32_t ms);
-
+void _timer_interrupt_handler(interrupt_context_t*);
 //*****************************************************************************
 //**
 //** 	END _[filename]

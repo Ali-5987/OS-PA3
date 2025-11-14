@@ -1,6 +1,8 @@
 {
   "files.associations": {
     "vfs.h": "c",
-    "elf.h": "c"
+    "elf.h": "c",
+    "utils.h": "c",
+    "stdint.h": "c"
   }
 }
