@@ -84,8 +84,8 @@ void kmain ()
 	// ---- The initialization functions have already been called in the kmain
 	//   - uncomment these functions as you keep implementing features.
 
-	// LOG_P ("Initializing system timer at 1000 Hz...\n");
-	// init_system_timer (1000); // Initialize the system timer with 1000Hz freq
+	LOG_P ("Initializing system timer at 1000 Hz...\n");
+	init_system_timer (1000); // Initialize the system timer with 1000Hz freq
 
 	// LOG_P ("Initializing floppy disk controller...\n");
 	// fdc_init (); // Initialize the floppy disk controller

@@ -10,8 +10,8 @@ void init_system_timer(uint32_t frequency)
 {   freq = frequency;
     int divisor = 1193182/frequency;
     outb(0x34,PIT_COMMAND_PORT);
-    outb((divisor) & 0xFFFF, PIT_CHANNEL0_DATA_PORT);
-    outb((divisor>>16) & 0xFFFF, PIT_CHANNEL0_DATA_PORT);
+    outb((divisor) & 0xFF, PIT_CHANNEL0_DATA_PORT);
+    outb((divisor>>8) & 0xFF, PIT_CHANNEL0_DATA_PORT);
     register_interrupt_handler(32,_timer_interrupt_handler);
 }
 void _timer_interrupt_handler(interrupt_context_t*)
@@ -24,9 +24,10 @@ uint32_t get_system_tick_count()
 }
 void sleep(uint32_t ms) {
     uint32_t initial_ticks = ticks;
+    uint32_t final_ticks = initial_ticks+(ms*freq)/1000;
     while(1)
     {
-        if (initial_ticks+(ms*freq) == ticks)
+        if (final_ticks<= ticks)
         break;
-    }   
+    }
 }

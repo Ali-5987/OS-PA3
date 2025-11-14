@@ -43,9 +43,9 @@ static struct test_case test_cases[] = {
 
 	// -- Timer tests 
 
-	// { "test_tick_count_incrementing",		test_tick_count_incrementing },
-	// { "test_sleep_duration",			test_sleep_duration },
-	// { "test_multiple_sleeps",			test_multiple_sleeps },
+	{ "test_tick_count_incrementing",		test_tick_count_incrementing },
+	{ "test_sleep_duration",			test_sleep_duration },
+	{ "test_multiple_sleeps",			test_multiple_sleeps },
 
 	// -- TSS tests --
 
