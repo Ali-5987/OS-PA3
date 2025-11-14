@@ -54,9 +54,9 @@ static struct test_case test_cases[] = {
 
 	// -- ELF Tests --
 
-	// { "test_elf_check_valid_header",	test_elf_check_valid_header },
-	// { "test_elf_load_program",			test_elf_load_program },
-	// { "test_elf_load_nonexistent",		test_elf_load_nonexistent },
+	{ "test_elf_check_valid_header",	test_elf_check_valid_header },
+	{ "test_elf_load_program",			test_elf_load_program },
+	{ "test_elf_load_nonexistent",		test_elf_load_nonexistent },
 
 	// -- Process and threads tests --
 

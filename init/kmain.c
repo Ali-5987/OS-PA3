@@ -87,14 +87,14 @@ void kmain ()
 	LOG_P ("Initializing system timer at 1000 Hz...\n");
 	init_system_timer (1000); // Initialize the system timer with 1000Hz freq
 
-	// LOG_P ("Initializing floppy disk controller...\n");
-	// fdc_init (); // Initialize the floppy disk controller
+	LOG_P ("Initializing floppy disk controller...\n");
+	fdc_init (); // Initialize the floppy disk controller
 
-	// LOG_P ("Initializing VFS layer...\n");
-	// vfs_init (); // Initialize the VFS layer
+	LOG_P ("Initializing VFS layer...\n");
+	vfs_init (); // Initialize the VFS layer
 
-	// LOG_P ("Mounting initfs\n");
-	// vfs_mount ("fd0", "/fd0", "fat12"); // mount the floppy disk as root fs
+	LOG_P ("Mounting initfs\n");
+	vfs_mount ("fd0", "/fd0", "fat12"); // mount the floppy disk as root fs
 
 	// LOG_P ("Initializing scheduler...\n");
 	// scheduler_init (); // Initialize the process scheduler

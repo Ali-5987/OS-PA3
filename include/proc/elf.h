@@ -88,11 +88,36 @@
 //-----------------------------------------------------------------------------
 // 		INTERFACE DATA STRUCTURES
 //-----------------------------------------------------------------------------
-struct elf_header_t{};
+typedef struct {
+    unsigned char e_ident[16];
+    uint16_t      e_type;
+    uint16_t      e_machine;
+    uint32_t      e_version;
+    uint32_t      e_entry;
+    uint32_t      e_phoff;
+    uint32_t      e_shoff;
+    uint32_t      e_flags;
+    uint16_t      e_ehsize;
+    uint16_t      e_phentsize;
+    uint16_t      e_phnum;
+} elf_header_t;
+
+typedef struct {
+    uint32_t p_type;
+    uint32_t p_offset;
+    uint32_t p_vaddr;
+    uint32_t p_paddr;
+    uint32_t p_filesz;
+    uint32_t p_memsz;
+    uint32_t p_flags;
+    uint32_t p_align;
+} elf_phdr_t;
 //-----------------------------------------------------------------------------
 // 		INTERFACE FUNCTION PROTOTYPES
 //-----------------------------------------------------------------------------
-
+bool elf_check_hdr(elf_header_t* hdr);
+int32_t elf_load_seg(file_t* file, pagedir_t* dir, elf_phdr_t* phdr);
+int32_t elf_load(const char* path, pagedir_t* dir, void** entry);
 //*****************************************************************************
 //**
 //** 	END elf.h
