@@ -73,7 +73,7 @@ static struct test_case test_cases[] = {
 	// { "test_scheduler_post_thread",		test_scheduler_post_thread },
 	{ "test_multiple_process_creation",		test_multiple_process_creation },
 	// { "test_thread_destroy_safe",			test_thread_destroy_safe },
-	// { "test_process_exit_safe",			test_process_exit_safe },
+	 { "test_process_exit_safe",			test_process_exit_safe },
 	// { "test_concurrent_scheduler_ops",		test_concurrent_scheduler_ops },
 	// { "test_many_threads_creation",		test_many_threads_creation },
 	

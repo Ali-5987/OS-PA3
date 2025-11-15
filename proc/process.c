@@ -3,6 +3,8 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include <../include/proc/process.h>
+#include <../include/mm/vmm.h>
+//#include <../include/mm/kheap.h>
 #define LOG_MOD_NAME 	"PRC"
 #define LOG_MOD_ENABLE  1
 #include <log.h>
@@ -17,8 +19,22 @@ void process_create(process_t* process, const char* name, int32_t priority)
     process->threads = NULL;
 }
  void process_destroy(process_t* process)
- {
-    
+ {  if (process->state == STATE_TERMINATED)
+    return;
+    process->state = STATE_TERMINATED;
+    thread_t* this_thread = process->threads;
+    while (!this_thread)
+    {
+        thread_t* prev = this_thread;
+        thread_destroy(prev);
+        this_thread = this_thread->next;
+    }
+    if (process->dir)
+    {
+        vmm_free_region(process->dir, (void*)0x0, 0xC0000000);
+        kfree(process->dir);
+    }
+    kfree(process);
  }
  int32_t process_spawn(const char* filename){}
  int32_t process_fork(){}

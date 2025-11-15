@@ -197,7 +197,7 @@ LOAD testmain.o
 .fini
  *(SORT_NONE(.fini))
 
-.rodata         0x0000000000000000      0xd57
+.rodata         0x0000000000000000      0xd6e
  *(.rodata)
  .rodata        0x0000000000000000      0x19e proc/test_elf.o
  *fill*         0x000000000000019e        0x2 
@@ -207,7 +207,7 @@ LOAD testmain.o
  *fill*         0x0000000000000ad2        0x2 
  .rodata        0x0000000000000ad4      0x132 proc/test_tss.o
  *fill*         0x0000000000000c06        0x2 
- .rodata        0x0000000000000c08      0x14f testmain.o
+ .rodata        0x0000000000000c08      0x166 testmain.o
 
 .rodata1
  *(.rodata1)
@@ -262,13 +262,13 @@ LOAD testmain.o
 .got.plt
  *(.got.plt)
 
-.data           0x0000000000000000       0x68
+.data           0x0000000000000000       0x70
  *(.data)
  .data          0x0000000000000000        0x0 proc/test_elf.o
  .data          0x0000000000000000        0x0 proc/test_proc.o
  .data          0x0000000000000000        0x0 proc/test_timer.o
  .data          0x0000000000000000        0x0 proc/test_tss.o
- .data          0x0000000000000000       0x68 testmain.o
+ .data          0x0000000000000000       0x70 testmain.o
 
 .data1
  *(.data1)
@@ -412,21 +412,21 @@ LOAD testmain.o
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x1af5
+.debug_info     0x0000000000000000     0x1b22
  *(.debug_info)
  .debug_info    0x0000000000000000      0x6a6 proc/test_elf.o
- .debug_info    0x00000000000006a6      0xafc proc/test_proc.o
- .debug_info    0x00000000000011a2      0x2b2 proc/test_timer.o
- .debug_info    0x0000000000001454      0x39b proc/test_tss.o
- .debug_info    0x00000000000017ef      0x306 testmain.o
+ .debug_info    0x00000000000006a6      0xb21 proc/test_proc.o
+ .debug_info    0x00000000000011c7      0x2b2 proc/test_timer.o
+ .debug_info    0x0000000000001479      0x39b proc/test_tss.o
+ .debug_info    0x0000000000001814      0x30e testmain.o
 
-.debug_abbrev   0x0000000000000000      0x7b2
+.debug_abbrev   0x0000000000000000      0x7bb
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x197 proc/test_elf.o
- .debug_abbrev  0x0000000000000197      0x240 proc/test_proc.o
- .debug_abbrev  0x00000000000003d7      0x119 proc/test_timer.o
- .debug_abbrev  0x00000000000004f0      0x123 proc/test_tss.o
- .debug_abbrev  0x0000000000000613      0x19f testmain.o
+ .debug_abbrev  0x0000000000000197      0x249 proc/test_proc.o
+ .debug_abbrev  0x00000000000003e0      0x119 proc/test_timer.o
+ .debug_abbrev  0x00000000000004f9      0x123 proc/test_tss.o
+ .debug_abbrev  0x000000000000061c      0x19f testmain.o
 
 .debug_line     0x0000000000000000     0x1059
  *(.debug_line)
@@ -439,13 +439,13 @@ LOAD testmain.o
 .debug_frame
  *(.debug_frame)
 
-.debug_str      0x0000000000000000    0x11d72
+.debug_str      0x0000000000000000    0x11d8e
  *(.debug_str)
  .debug_str     0x0000000000000000     0x3a30 proc/test_elf.o
- .debug_str     0x0000000000003a30     0x49aa proc/test_proc.o
- .debug_str     0x00000000000083da     0x3275 proc/test_timer.o
- .debug_str     0x000000000000b64f     0x2f22 proc/test_tss.o
- .debug_str     0x000000000000e571     0x3801 testmain.o
+ .debug_str     0x0000000000003a30     0x49af proc/test_proc.o
+ .debug_str     0x00000000000083df     0x3275 proc/test_timer.o
+ .debug_str     0x000000000000b654     0x2f22 proc/test_tss.o
+ .debug_str     0x000000000000e576     0x3818 testmain.o
 
 .debug_loc
  *(.debug_loc)

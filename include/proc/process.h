@@ -18,6 +18,7 @@ typedef struct thread thread_t;
     thread_t* threads;
     uint32_t priority;
     pagedir_t* dir;
+    uint32_t state;
 } process_t;
  
 typedef struct thread
