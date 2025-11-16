@@ -101,13 +101,26 @@ thread_t* thread_create(process_t* parent_process, void* entry, void* arg)
     interrupt_context_t* context = (interrupt_context_t*)((uint32_t)stack_top - sizeof(interrupt_context_t));
     memset(context, 0, sizeof(interrupt_context_t));
     context->eip = (uint32_t)entry;
-
-    thisthread->trap_frame = context;
-    context->cs = 0x1B;
-    context->ds = 0x23;
-    context->ss = 0x23;         
-    context->eflags = 0x202;
-    return thisthread;
+    if ((uint32_t)entry >= 0xC0000000)
+    {
+    context->cs = 0x08; 
+    context->ds = 0x10; 
+    context->ss = 0x10; 
+    context->eflags = 0x202; 
+    }
+    else
+    {
+    context->cs = 0x1B; 
+    context->ds = 0x23; 
+    context->ss = 0x23; 
+    context->eflags = 0x202; 
+}   return thisthread;
+    // thisthread->trap_frame = context;
+    // context->cs = 0x1B;
+    // context->ds = 0x23;
+    // context->ss = 0x23;         
+    // context->eflags = 0x202;
+    // return thisthread;
 }
 int32_t thread_destroy(thread_t* thread)
 {   cli();
