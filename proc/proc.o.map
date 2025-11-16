@@ -119,32 +119,33 @@ LOAD build/./tss.o
 .plt.sec
  *(.plt.sec)
 
-.text           0x0000000000000000      0x405
+.text           0x0000000000000000      0x5b3
  *(.text .stub)
  .text          0x0000000000000000      0x27d build/./elf.o
                 0x0000000000000000                elf_check_hdr
                 0x0000000000000074                elf_load_seg
                 0x000000000000016e                elf_load
- .text          0x000000000000027d      0x153 build/./process.o
+ .text          0x000000000000027d      0x301 build/./process.o
                 0x000000000000027d                process_create
-                0x00000000000002f1                process_destroy
-                0x0000000000000382                process_spawn
-                0x0000000000000388                process_fork
-                0x000000000000038e                process_find_by_pid
-                0x0000000000000394                process_exit
-                0x000000000000039a                _get_main_thread
-                0x00000000000003a0                thread_create
-                0x00000000000003a6                thread_destroy
-                0x00000000000003ac                scheduler_init
-                0x00000000000003b2                scheduler_tick
-                0x00000000000003b8                scheduler_switch
-                0x00000000000003be                scheduler_post
-                0x00000000000003c4                get_current_proc
-                0x00000000000003ca                get_current_thread
- .text          0x00000000000003d0       0x35 build/./tss.o
-                0x00000000000003d0                tss_flush
-                0x00000000000003ea                tss_update_esp0
-                0x00000000000003fb                tss_get_global
+                0x00000000000002fb                process_destroy
+                0x000000000000038c                process_spawn
+                0x0000000000000408                process_fork
+                0x000000000000040e                process_find_by_pid
+                0x0000000000000414                process_exit
+                0x000000000000041a                _get_main_thread
+                0x0000000000000432                thread_create
+                0x000000000000054e                thread_destroy
+                0x0000000000000554                scheduler_init
+                0x000000000000055a                scheduler_tick
+                0x0000000000000560                scheduler_switch
+                0x0000000000000566                scheduler_post
+                0x000000000000056c                get_current_proc
+                0x0000000000000572                get_current_thread
+                0x0000000000000578                thread_exit
+ .text          0x000000000000057e       0x35 build/./tss.o
+                0x000000000000057e                tss_flush
+                0x0000000000000598                tss_update_esp0
+                0x00000000000005a9                tss_get_global
  *(.gnu.warning)
 
 .fini
@@ -159,11 +160,11 @@ LOAD build/./tss.o
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x0000000000000000      0x2e8
+.eh_frame       0x0000000000000000      0x308
  *(.eh_frame)
  .eh_frame      0x0000000000000000       0x78 build/./elf.o
- .eh_frame      0x0000000000000078      0x1f8 build/./process.o
- .eh_frame      0x0000000000000270       0x78 build/./tss.o
+ .eh_frame      0x0000000000000078      0x218 build/./process.o
+ .eh_frame      0x0000000000000290       0x78 build/./tss.o
 
 .gcc_except_table
  *(.gcc_except_table)
@@ -204,12 +205,12 @@ LOAD build/./tss.o
 .got.plt
  *(.got.plt)
 
-.data           0x0000000000000000        0x8
+.data           0x0000000000000000        0xc
  *(.data)
  .data          0x0000000000000000        0x0 build/./elf.o
- .data          0x0000000000000000        0x4 build/./process.o
- .data          0x0000000000000004        0x4 build/./tss.o
-                0x0000000000000004                global_tss
+ .data          0x0000000000000000        0x8 build/./process.o
+ .data          0x0000000000000008        0x4 build/./tss.o
+                0x0000000000000008                global_tss
 
 .data1
  *(.data1)
@@ -301,6 +302,12 @@ LOAD build/./tss.o
 .group          0x0000000000000000        0xc
  .group         0x0000000000000000        0xc build/./process.o
 
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./process.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc build/./process.o
+
 .gnu.build.attributes
  *(.gnu.build.attributes)
 
@@ -328,32 +335,32 @@ LOAD build/./tss.o
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0xfda
+.debug_info     0x0000000000000000     0x10fc
  *(.debug_info)
  .debug_info    0x0000000000000000      0x739 build/./elf.o
- .debug_info    0x0000000000000739      0x628 build/./process.o
- .debug_info    0x0000000000000d61      0x279 build/./tss.o
+ .debug_info    0x0000000000000739      0x74a build/./process.o
+ .debug_info    0x0000000000000e83      0x279 build/./tss.o
 
-.debug_abbrev   0x0000000000000000      0x4fc
+.debug_abbrev   0x0000000000000000      0x532
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x1cb build/./elf.o
- .debug_abbrev  0x00000000000001cb      0x225 build/./process.o
- .debug_abbrev  0x00000000000003f0      0x10c build/./tss.o
+ .debug_abbrev  0x00000000000001cb      0x25b build/./process.o
+ .debug_abbrev  0x0000000000000426      0x10c build/./tss.o
 
-.debug_line     0x0000000000000000      0x7d7
+.debug_line     0x0000000000000000      0x881
  *(.debug_line)
  .debug_line    0x0000000000000000      0x387 build/./elf.o
- .debug_line    0x0000000000000387      0x341 build/./process.o
- .debug_line    0x00000000000006c8      0x10f build/./tss.o
+ .debug_line    0x0000000000000387      0x3eb build/./process.o
+ .debug_line    0x0000000000000772      0x10f build/./tss.o
 
 .debug_frame
  *(.debug_frame)
 
-.debug_str      0x0000000000000000     0xa445
+.debug_str      0x0000000000000000     0xa77e
  *(.debug_str)
  .debug_str     0x0000000000000000     0x3c35 build/./elf.o
- .debug_str     0x0000000000003c35     0x3bc6 build/./process.o
- .debug_str     0x00000000000077fb     0x2c4a build/./tss.o
+ .debug_str     0x0000000000003c35     0x3eff build/./process.o
+ .debug_str     0x0000000000007b34     0x2c4a build/./tss.o
 
 .debug_loc
  *(.debug_loc)
@@ -388,11 +395,11 @@ LOAD build/./tss.o
 .debug_loclists
  *(.debug_loclists)
 
-.debug_macro    0x0000000000000000      0x195
+.debug_macro    0x0000000000000000      0x19d
  *(.debug_macro)
  .debug_macro   0x0000000000000000       0x8b build/./elf.o
- .debug_macro   0x000000000000008b       0xce build/./process.o
- .debug_macro   0x0000000000000159       0x3c build/./tss.o
+ .debug_macro   0x000000000000008b       0xd6 build/./process.o
+ .debug_macro   0x0000000000000161       0x3c build/./tss.o
 
 .debug_names
  *(.debug_names)
@@ -448,6 +455,12 @@ OUTPUT(proc.o elf32-i386)
 
 .debug_macro    0x0000000000000000       0x52
  .debug_macro   0x0000000000000000       0x52 build/./process.o
+
+.debug_macro    0x0000000000000000       0xee
+ .debug_macro   0x0000000000000000       0xee build/./process.o
+
+.debug_macro    0x0000000000000000       0x1c
+ .debug_macro   0x0000000000000000       0x1c build/./process.o
 
 .debug_macro    0x0000000000000000       0x22
  .debug_macro   0x0000000000000000       0x22 build/./process.o

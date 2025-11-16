@@ -7,7 +7,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "interrupts.h"
-
+#include "elf.h"
+#define PROCESS_PRI_MIN 0
+#define PROCESS_PRI_MAX 10
+#define PROCESS_PRI_DEFAULT 5
 #define STATE_TERMINATED -1
  typedef struct process process_t;
 typedef struct thread thread_t;
@@ -24,6 +27,7 @@ typedef struct thread thread_t;
 typedef struct thread
 {
     uint32_t tid;
+    uint32_t priority;
     uint32_t state;
     process_t* parent;
     uint32_t* kernel;
@@ -47,5 +51,5 @@ void scheduler_switch(thread_t* next_thread);
 void scheduler_post(thread_t* thread);
 process_t* get_current_proc(void);
 thread_t* get_current_thread(void);
-
+void thread_exit();
 #endif // PROCESS_H
