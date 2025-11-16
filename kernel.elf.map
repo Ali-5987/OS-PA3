@@ -1,0 +1,843 @@
+Archive member included to satisfy reference by file (symbol)
+
+libc/libk.a(string.o)         init/init.o (strlen)
+libc/libk.a(stdio.o)          init/init.o (printk)
+libc/libk.a(vsprintf.o)       libc/libk.a(stdio.o) (vsnprintf)
+
+Discarded input sections
+
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .group         0x0000000000000000        0xc init/init.o
+ .eh_frame      0x0000000000000000      0x194 init/init.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 init/init.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .group         0x0000000000000000        0xc mm/mm.o
+ .eh_frame      0x0000000000000000      0x670 mm/mm.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 mm/mm.o
+ .debug_macro   0x0000000000000000       0x16 mm/mm.o
+ .debug_macro   0x0000000000000000       0x16 mm/mm.o
+ .debug_macro   0x0000000000000000       0x22 mm/mm.o
+ .debug_macro   0x0000000000000000       0x88 mm/mm.o
+ .debug_macro   0x0000000000000000       0x22 mm/mm.o
+ .debug_macro   0x0000000000000000       0x76 mm/mm.o
+ .debug_macro   0x0000000000000000       0x8e mm/mm.o
+ .debug_macro   0x0000000000000000       0x3a mm/mm.o
+ .debug_macro   0x0000000000000000       0x10 mm/mm.o
+ .debug_macro   0x0000000000000000       0x58 mm/mm.o
+ .debug_macro   0x0000000000000000       0x50 mm/mm.o
+ .debug_macro   0x0000000000000000       0x82 mm/mm.o
+ .debug_macro   0x0000000000000000       0x2e mm/mm.o
+ .debug_macro   0x0000000000000000       0x40 mm/mm.o
+ .debug_macro   0x0000000000000000       0x52 mm/mm.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .group         0x0000000000000000        0xc driver/driver.o
+ .eh_frame      0x0000000000000000      0x894 driver/driver.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 driver/driver.o
+ .debug_macro   0x0000000000000000      0x844 driver/driver.o
+ .debug_macro   0x0000000000000000       0x16 driver/driver.o
+ .debug_macro   0x0000000000000000       0x82 driver/driver.o
+ .debug_macro   0x0000000000000000       0x16 driver/driver.o
+ .debug_macro   0x0000000000000000       0x22 driver/driver.o
+ .debug_macro   0x0000000000000000       0x22 driver/driver.o
+ .debug_macro   0x0000000000000000       0x40 driver/driver.o
+ .debug_macro   0x0000000000000000       0x64 driver/driver.o
+ .debug_macro   0x0000000000000000       0x50 driver/driver.o
+ .debug_macro   0x0000000000000000       0x3a driver/driver.o
+ .debug_macro   0x0000000000000000       0x52 driver/driver.o
+ .debug_macro   0x0000000000000000       0x8e driver/driver.o
+ .debug_macro   0x0000000000000000       0x10 driver/driver.o
+ .debug_macro   0x0000000000000000       0x58 driver/driver.o
+ .debug_macro   0x0000000000000000       0x76 driver/driver.o
+ .debug_macro   0x0000000000000000       0x8e driver/driver.o
+ .debug_macro   0x0000000000000000       0x3a driver/driver.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .group         0x0000000000000000        0xc proc/proc.o
+ .eh_frame      0x0000000000000000      0x348 proc/proc.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 proc/proc.o
+ .debug_macro   0x0000000000000000      0x844 proc/proc.o
+ .debug_macro   0x0000000000000000       0x16 proc/proc.o
+ .debug_macro   0x0000000000000000       0x82 proc/proc.o
+ .debug_macro   0x0000000000000000       0x16 proc/proc.o
+ .debug_macro   0x0000000000000000       0x22 proc/proc.o
+ .debug_macro   0x0000000000000000       0x76 proc/proc.o
+ .debug_macro   0x0000000000000000       0x8e proc/proc.o
+ .debug_macro   0x0000000000000000       0x3a proc/proc.o
+ .debug_macro   0x0000000000000000       0xe8 proc/proc.o
+ .debug_macro   0x0000000000000000       0x50 proc/proc.o
+ .debug_macro   0x0000000000000000       0x10 proc/proc.o
+ .debug_macro   0x0000000000000000       0x88 proc/proc.o
+ .debug_macro   0x0000000000000000       0x52 proc/proc.o
+ .debug_macro   0x0000000000000000       0xee proc/proc.o
+ .debug_macro   0x0000000000000000       0x34 proc/proc.o
+ .debug_macro   0x0000000000000000       0x22 proc/proc.o
+ .debug_macro   0x0000000000000000       0x40 proc/proc.o
+ .debug_macro   0x0000000000000000       0x64 proc/proc.o
+ .group         0x0000000000000000        0xc fs/fs.o
+ .group         0x0000000000000000        0xc fs/fs.o
+ .group         0x0000000000000000        0xc fs/fs.o
+ .group         0x0000000000000000        0xc fs/fs.o
+ .group         0x0000000000000000        0xc fs/fs.o
+ .group         0x0000000000000000        0xc fs/fs.o
+ .group         0x0000000000000000        0xc fs/fs.o
+ .group         0x0000000000000000        0xc fs/fs.o
+ .group         0x0000000000000000        0xc fs/fs.o
+ .group         0x0000000000000000        0xc fs/fs.o
+ .group         0x0000000000000000        0xc fs/fs.o
+ .group         0x0000000000000000        0xc fs/fs.o
+ .group         0x0000000000000000        0xc fs/fs.o
+ .group         0x0000000000000000        0xc fs/fs.o
+ .eh_frame      0x0000000000000000      0x258 fs/fs.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 fs/fs.o
+ .debug_macro   0x0000000000000000      0x844 fs/fs.o
+ .debug_macro   0x0000000000000000       0x16 fs/fs.o
+ .debug_macro   0x0000000000000000       0x82 fs/fs.o
+ .debug_macro   0x0000000000000000       0x16 fs/fs.o
+ .debug_macro   0x0000000000000000       0x22 fs/fs.o
+ .debug_macro   0x0000000000000000       0x10 fs/fs.o
+ .debug_macro   0x0000000000000000       0x58 fs/fs.o
+ .debug_macro   0x0000000000000000      0x1d8 fs/fs.o
+ .debug_macro   0x0000000000000000       0x10 fs/fs.o
+ .debug_macro   0x0000000000000000       0x22 fs/fs.o
+ .debug_macro   0x0000000000000000       0x40 fs/fs.o
+ .debug_macro   0x0000000000000000       0x64 fs/fs.o
+ .debug_macro   0x0000000000000000       0x10 fs/fs.o
+ .debug_macro   0x0000000000000000       0x88 fs/fs.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .group         0x0000000000000000        0xc objs/impl.o
+ .eh_frame      0x0000000000000000      0x8cc objs/impl.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 objs/impl.o
+ .debug_macro   0x0000000000000000      0x838 objs/impl.o
+ .debug_macro   0x0000000000000000       0x16 objs/impl.o
+ .debug_macro   0x0000000000000000       0x82 objs/impl.o
+ .debug_macro   0x0000000000000000       0x16 objs/impl.o
+ .debug_macro   0x0000000000000000       0x4a objs/impl.o
+ .debug_macro   0x0000000000000000       0x52 objs/impl.o
+ .debug_macro   0x0000000000000000       0x46 objs/impl.o
+ .debug_macro   0x0000000000000000       0xa6 objs/impl.o
+ .debug_macro   0x0000000000000000       0x22 objs/impl.o
+ .debug_macro   0x0000000000000000       0x40 objs/impl.o
+ .debug_macro   0x0000000000000000       0x64 objs/impl.o
+ .debug_macro   0x0000000000000000       0x22 objs/impl.o
+ .debug_macro   0x0000000000000000       0x50 objs/impl.o
+ .debug_macro   0x0000000000000000       0x3a objs/impl.o
+ .debug_macro   0x0000000000000000       0x2e objs/impl.o
+ .debug_macro   0x0000000000000000       0x76 objs/impl.o
+ .debug_macro   0x0000000000000000       0x8e objs/impl.o
+ .debug_macro   0x0000000000000000       0x3a objs/impl.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .group         0x0000000000000000        0xc tests/tests.o
+ .eh_frame      0x0000000000000000      0x514 tests/tests.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 tests/tests.o
+ .debug_macro   0x0000000000000000      0x844 tests/tests.o
+ .debug_macro   0x0000000000000000       0x16 tests/tests.o
+ .debug_macro   0x0000000000000000       0x82 tests/tests.o
+ .debug_macro   0x0000000000000000       0x16 tests/tests.o
+ .debug_macro   0x0000000000000000       0x22 tests/tests.o
+ .debug_macro   0x0000000000000000       0x76 tests/tests.o
+ .debug_macro   0x0000000000000000       0x8e tests/tests.o
+ .debug_macro   0x0000000000000000       0x3a tests/tests.o
+ .debug_macro   0x0000000000000000       0xe8 tests/tests.o
+ .debug_macro   0x0000000000000000       0x22 tests/tests.o
+ .debug_macro   0x0000000000000000       0x52 tests/tests.o
+ .debug_macro   0x0000000000000000       0xee tests/tests.o
+ .debug_macro   0x0000000000000000       0x34 tests/tests.o
+ .debug_macro   0x0000000000000000      0x1e9 tests/tests.o
+ .debug_macro   0x0000000000000000       0x10 tests/tests.o
+ .debug_macro   0x0000000000000000       0x50 tests/tests.o
+ .debug_macro   0x0000000000000000       0x8e tests/tests.o
+ .debug_macro   0x0000000000000000      0x1e3 tests/tests.o
+ .group         0x0000000000000000        0xc libc/libk.a(string.o)
+ .group         0x0000000000000000        0xc libc/libk.a(string.o)
+ .group         0x0000000000000000        0xc libc/libk.a(string.o)
+ .group         0x0000000000000000        0xc libc/libk.a(string.o)
+ .group         0x0000000000000000        0xc libc/libk.a(string.o)
+ .debug_macro   0x0000000000000000      0x844 libc/libk.a(string.o)
+ .debug_macro   0x0000000000000000       0x16 libc/libk.a(string.o)
+ .debug_macro   0x0000000000000000       0x88 libc/libk.a(string.o)
+ .debug_macro   0x0000000000000000       0x16 libc/libk.a(string.o)
+ .debug_macro   0x0000000000000000       0x22 libc/libk.a(string.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libc/libk.a(string.o)
+ .eh_frame      0x0000000000000000      0x198 libc/libk.a(string.o)
+ .group         0x0000000000000000        0xc libc/libk.a(stdio.o)
+ .group         0x0000000000000000        0xc libc/libk.a(stdio.o)
+ .group         0x0000000000000000        0xc libc/libk.a(stdio.o)
+ .group         0x0000000000000000        0xc libc/libk.a(stdio.o)
+ .group         0x0000000000000000        0xc libc/libk.a(stdio.o)
+ .group         0x0000000000000000        0xc libc/libk.a(stdio.o)
+ .group         0x0000000000000000        0xc libc/libk.a(stdio.o)
+ .group         0x0000000000000000        0xc libc/libk.a(stdio.o)
+ .group         0x0000000000000000        0xc libc/libk.a(stdio.o)
+ .debug_macro   0x0000000000000000      0x844 libc/libk.a(stdio.o)
+ .debug_macro   0x0000000000000000       0x16 libc/libk.a(stdio.o)
+ .debug_macro   0x0000000000000000       0x82 libc/libk.a(stdio.o)
+ .debug_macro   0x0000000000000000       0x22 libc/libk.a(stdio.o)
+ .debug_macro   0x0000000000000000       0x16 libc/libk.a(stdio.o)
+ .debug_macro   0x0000000000000000      0x1e3 libc/libk.a(stdio.o)
+ .debug_macro   0x0000000000000000       0x22 libc/libk.a(stdio.o)
+ .debug_macro   0x0000000000000000       0x3a libc/libk.a(stdio.o)
+ .debug_macro   0x0000000000000000       0x2e libc/libk.a(stdio.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libc/libk.a(stdio.o)
+ .eh_frame      0x0000000000000000       0x58 libc/libk.a(stdio.o)
+ .group         0x0000000000000000        0xc libc/libk.a(vsprintf.o)
+ .group         0x0000000000000000        0xc libc/libk.a(vsprintf.o)
+ .group         0x0000000000000000        0xc libc/libk.a(vsprintf.o)
+ .group         0x0000000000000000        0xc libc/libk.a(vsprintf.o)
+ .group         0x0000000000000000        0xc libc/libk.a(vsprintf.o)
+ .debug_macro   0x0000000000000000      0x844 libc/libk.a(vsprintf.o)
+ .debug_macro   0x0000000000000000       0x16 libc/libk.a(vsprintf.o)
+ .debug_macro   0x0000000000000000       0x10 libc/libk.a(vsprintf.o)
+ .debug_macro   0x0000000000000000       0x22 libc/libk.a(vsprintf.o)
+ .debug_macro   0x0000000000000000       0x88 libc/libk.a(vsprintf.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 libc/libk.a(vsprintf.o)
+ .eh_frame      0x0000000000000000       0xfc libc/libk.a(vsprintf.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x00000000c0100000                . = 0xc0100000
+                0x00000000c0100000                kernel_start = .
+                0x00000000c0100100                . = (. + 0x100)
+                0x00000000c0100100                kcode_start = .
+
+.text           0x00000000c0100100     0x99c8
+ *(.text)
+ .text          0x00000000c0100100      0xf9f init/init.o
+                0x00000000c0100100                create_gdt_entry
+                0x00000000c010017d                gdt_init_flat_protected
+                0x00000000c01002c5                get_gdt_ptr
+                0x00000000c01002cf                kmain
+                0x00000000c010077f                run_cmd
+                0x00000000c0101011                shell
+                0x00000000c010107a                load_gdt
+                0x00000000c0101097                load_idt
+ .text          0x00000000c010109f     0x153c mm/mm.o
+                0x00000000c01012d2                get_kernel_heap
+                0x00000000c01012dc                kheap_init
+                0x00000000c010145e                kheap_stats
+                0x00000000c01015d0                kmalloc
+                0x00000000c0101725                kfree
+                0x00000000c0101855                krealloc
+                0x00000000c010191d                realloc
+                0x00000000c010193b                malloc
+                0x00000000c0101950                free
+                0x00000000c0101a60                kmm_setup_memory_region
+                0x00000000c0101af2                kmm_init
+                0x00000000c0101cab                kmm_frame_alloc
+                0x00000000c0101d3d                kmm_frame_free
+                0x00000000c0101d92                kmm_get_total_frames
+                0x00000000c0101d9c                kmm_get_used_frames
+                0x00000000c0101e7e                vmm_switch_pagedir
+                0x00000000c0101eb5                vmm_init
+                0x00000000c0101f77                vmm_create_address_space
+                0x00000000c0101fb7                vmm_create_pt
+                0x00000000c0102021                vmm_map_page
+                0x00000000c0102097                vmm_get_phys_frame
+                0x00000000c0102116                vmm_clone_pagetable
+                0x00000000c01021fe                vmm_clone_pagedir
+                0x00000000c0102324                vmm_page_alloc
+                0x00000000c010237c                vmm_alloc_region
+                0x00000000c0102447                vmm_free_region
+                0x00000000c0102572                vmm_page_free
+                0x00000000c01025b7                vmm_get_kerneldir
+                0x00000000c01025c1                vmm_get_current_pagedir
+ .text          0x00000000c01025db     0x1648 driver/driver.o
+                0x00000000c01025db                blkdev_register
+                0x00000000c0102861                blkdev_get_by_name
+                0x00000000c0102951                blkread
+                0x00000000c0102a45                dma_set_address
+                0x00000000c0102b24                dma_set_count
+                0x00000000c0102c03                dma_set_external_pagereg
+                0x00000000c0102cba                dma_set_mode
+                0x00000000c0102d77                dma_setup_read
+                0x00000000c0102d98                dma_setup_write
+                0x00000000c0102db9                dma_mask_channel
+                0x00000000c0102e52                dma_unmask_channel
+                0x00000000c0102ee5                dma_unmask_all
+                0x00000000c0102ef7                dma_reset_flipflop
+                0x00000000c0102f26                dma_reset
+                0x00000000c0102f55                dma_disable
+                0x00000000c01034e4                fdc_init
+                0x00000000c0103546                fdc_reset
+                0x00000000c01035b4                fdc_read_sector
+                0x00000000c0103671                fdc_lba_to_chs
+                0x00000000c0103720                fdc_set_drive
+                0x00000000c0103740                fdc_get_drive
+                0x00000000c010376b                pic_init
+                0x00000000c010380d                pic_send_eoi
+                0x00000000c0103879                serial_init
+                0x00000000c010395e                serial_putc
+                0x00000000c010399a                serial_puts
+                0x00000000c01039d9                serial_getc
+                0x00000000c0103b58                init_system_timer
+                0x00000000c0103bbc                _timer_interrupt_handler
+                0x00000000c0103be0                get_system_tick_count
+                0x00000000c0103bea                sleep
+ .text          0x00000000c0103c23      0xd46 proc/proc.o
+                0x00000000c0103c23                elf_check_hdr
+                0x00000000c0103c97                elf_load_seg
+                0x00000000c0103d91                elf_load
+                0x00000000c0103eae                process_create
+                0x00000000c0103f84                process_destroy
+                0x00000000c0104051                process_spawn
+                0x00000000c01040df                process_fork
+                0x00000000c0104277                process_find_by_pid
+                0x00000000c01042bd                process_exit
+                0x00000000c01042c3                _get_main_thread
+                0x00000000c0104300                thread_create
+                0x00000000c010447f                thread_destroy
+                0x00000000c01045c0                scheduler_init
+                0x00000000c01046c7                scheduler_tick
+                0x00000000c0104780                scheduler_switch
+                0x00000000c010480e                scheduler_post
+                0x00000000c010489f                get_current_proc
+                0x00000000c01048a9                get_current_thread
+                0x00000000c01048b3                thread_exit
+                0x00000000c0104934                tss_flush
+                0x00000000c010494e                tss_update_esp0
+                0x00000000c010495f                tss_get_global
+ .text          0x00000000c0104969      0xe33 fs/fs.o
+                0x00000000c0104db9                fat12_mount
+                0x00000000c01050dd                fat12_unmount
+                0x00000000c010519d                fat12_open
+                0x00000000c01051fa                fat12_read
+                0x00000000c0105454                fat12_close
+                0x00000000c010545e                fat12_write
+                0x00000000c0105468                fat12_readdir
+                0x00000000c010550a                vfs_init
+                0x00000000c010554e                vfs_mount
+                0x00000000c0105640                vfs_open
+                0x00000000c0105732                vfs_read
+ .text          0x00000000c010579c     0x1995 objs/impl.o
+                0x00000000c01057ea                idt_init
+                0x00000000c0105d11                get_idt_ptr
+                0x00000000c0105d42                setup_x86_interrutps
+                0x00000000c0105d77                register_interrupt_handler
+                0x00000000c0105d94                unregister_interrupt_handler
+                0x00000000c0105db2                get_interrupt_handler
+                0x00000000c0105dcb                interrupt_dispatch
+                0x00000000c0105e1a                isr0
+                0x00000000c0105e23                isr1
+                0x00000000c0105e2c                isr2
+                0x00000000c0105e35                isr3
+                0x00000000c0105e3e                isr4
+                0x00000000c0105e47                isr5
+                0x00000000c0105e50                isr6
+                0x00000000c0105e59                isr7
+                0x00000000c0105e62                isr8
+                0x00000000c0105e69                isr9
+                0x00000000c0105e72                isr10
+                0x00000000c0105e79                isr11
+                0x00000000c0105e80                isr12
+                0x00000000c0105e87                isr13
+                0x00000000c0105e8e                isr14
+                0x00000000c0105e95                isr15
+                0x00000000c0105e9e                isr16
+                0x00000000c0105ea7                isr17
+                0x00000000c0105eae                isr18
+                0x00000000c0105eb7                isr19
+                0x00000000c0105ec0                isr20
+                0x00000000c0105ec9                isr21
+                0x00000000c0105ed0                isr22
+                0x00000000c0105ed9                isr23
+                0x00000000c0105ee2                isr24
+                0x00000000c0105eeb                isr25
+                0x00000000c0105ef4                isr26
+                0x00000000c0105efd                isr27
+                0x00000000c0105f06                isr28
+                0x00000000c0105f0c                isr29
+                0x00000000c0105f12                isr30
+                0x00000000c0105f18                isr31
+                0x00000000c0105f1e                isr32
+                0x00000000c0105f24                isr33
+                0x00000000c0105f2a                isr34
+                0x00000000c0105f30                isr35
+                0x00000000c0105f36                isr36
+                0x00000000c0105f3c                isr37
+                0x00000000c0105f42                isr38
+                0x00000000c0105f48                isr39
+                0x00000000c0105f4e                isr40
+                0x00000000c0105f54                isr41
+                0x00000000c0105f5a                isr42
+                0x00000000c0105f60                isr43
+                0x00000000c0105f66                isr44
+                0x00000000c0105f6c                isr45
+                0x00000000c0105f72                isr46
+                0x00000000c0105f78                isr47
+                0x00000000c0105f7e                isr128
+                0x00000000c01064d6                kbd_init
+                0x00000000c0106576                kbd_get_lastscancode
+                0x00000000c0106582                kbd_get_lastkey
+                0x00000000c01065aa                kbd_getlastkey_buf
+                0x00000000c01065bd                kbd_clear_lastkey
+                0x00000000c01065ca                kbd_keycode_to_ascii
+                0x00000000c01066fd                kbd_get_numlock
+                0x00000000c0106709                kbd_get_capslock
+                0x00000000c0106715                kbd_get_scrolllock
+                0x00000000c0106721                kbd_get_shift
+                0x00000000c010672d                kbd_get_ctrl
+                0x00000000c0106739                kbd_get_alt
+                0x00000000c0106745                kbd_ignore_resend
+                0x00000000c0106752                kbd_should_resend
+                0x00000000c010675e                kbd_set_leds
+                0x00000000c01067e2                kbd_self_test
+                0x00000000c010680e                kbd_bat_result
+                0x00000000c010681a                kbd_diag_result
+                0x00000000c0106826                kbd_is_enabled
+                0x00000000c0106832                kbd_setstate
+                0x00000000c01068ef                syscall_init
+                0x00000000c01069b4                tty_init
+                0x00000000c01069c7                terminal_getc
+                0x00000000c01069ef                terminal_read
+                0x00000000c0106a54                terminal_stdin_init
+                0x00000000c0106a62                terminal_move_cursor
+                0x00000000c0106ac4                terminal_clear_scr
+                0x00000000c0106b6a                terminal_clear_log
+                0x00000000c0106c10                terminal_setcolor
+                0x00000000c0106c28                terminal_get_colour
+                0x00000000c0106c34                terminal_settext_color
+                0x00000000c0106c6c                terminal_setbg_color
+                0x00000000c0106ca4                terminal_reset_color
+                0x00000000c0106ccb                terminal_stdout_init
+                0x00000000c0106d0e                terminal_putc
+                0x00000000c0106f82                terminal_write
+                0x00000000c0106fc9                terminal_writestring
+                0x00000000c010700e                vga_entry_color
+                0x00000000c0107020                vga_entry
+                0x00000000c0107041                vga_move_cursor_to
+                0x00000000c01070ca                vga_putentry_at
+                0x00000000c0107127                vga_get_screen_buffer
+ .text          0x00000000c0107131     0x197b tests/tests.o
+                0x00000000c0107131                test_elf_check_valid_header
+                0x00000000c01071ba                test_elf_load_program
+                0x00000000c01072ca                test_elf_load_nonexistent
+                0x00000000c0107349                test_process_create_nonnull
+                0x00000000c01073d2                test_process_create_different_priorities
+                0x00000000c01074fb                test_process_name_handling
+                0x00000000c01075de                test_get_main_thread_nonnull
+                0x00000000c0107665                test_thread_creation
+                0x00000000c01076fc                test_multiple_thread_creation
+                0x00000000c0107869                test_scheduler_get_current_thread
+                0x00000000c01078a1                test_scheduler_get_current_proc
+                0x00000000c01078e8                test_scheduler_post_thread
+                0x00000000c01079b1                test_multiple_process_creation
+                0x00000000c0107aef                test_thread_destroy_safe
+                0x00000000c0107ba7                test_scheduler_init_idempotent
+                0x00000000c0107c04                test_process_exit_safe
+                0x00000000c0107cac                test_concurrent_scheduler_ops
+                0x00000000c0107e0e                test_many_threads_creation
+                0x00000000c01080af                thread_test
+                0x00000000c01081b8                test_tick_count_incrementing
+                0x00000000c0108318                test_sleep_duration
+                0x00000000c01083f0                test_multiple_sleeps
+                0x00000000c0108606                test_tss_global_access
+                0x00000000c01086d4                test_tss_esp0_update
+                0x00000000c01088e7                utoa
+                0x00000000c0108999                start_tests
+                0x00000000c0108a1d                read_command
+                0x00000000c0108a88                send_msg
+ .text          0x00000000c0108aac      0x5e7 libc/libk.a(string.o)
+                0x00000000c0108aac                strlen
+                0x00000000c0108ad3                memset
+                0x00000000c0108b06                strcmp
+                0x00000000c0108b45                memcpy
+                0x00000000c0108b86                memcmp
+                0x00000000c0108bee                strcpy
+                0x00000000c0108c28                strncpy
+                0x00000000c0108c85                strchr
+                0x00000000c0108cb1                strtok
+                0x00000000c0108d63                strtol
+                0x00000000c0108f2b                strtok_r
+                0x00000000c0109049                strcat
+ .text          0x00000000c0109093       0x79 libc/libk.a(stdio.o)
+                0x00000000c0109093                printk
+                0x00000000c01090d7                getlinek
+ .text          0x00000000c010910c      0x9bc libc/libk.a(vsprintf.o)
+                0x00000000c010961c                vsnprintf
+                0x00000000c0109ac8                kcode_end = .
+                0x00000000c0109ac8                krodata_start = .
+
+.iplt           0x00000000c0109ac8        0x0
+ .iplt          0x00000000c0109ac8        0x0 init/init.o
+
+.rodata         0x00000000c0109ae0     0x1ec8
+ *(.rodata)
+ .rodata        0x00000000c0109ae0      0x70b init/init.o
+ *fill*         0x00000000c010a1eb        0x1 
+ .rodata        0x00000000c010a1ec       0xbc mm/mm.o
+ .rodata        0x00000000c010a2a8      0x3d2 driver/driver.o
+ .rodata        0x00000000c010a67a        0xa fs/fs.o
+ *fill*         0x00000000c010a684       0x1c 
+ .rodata        0x00000000c010a6a0      0x393 objs/impl.o
+ *fill*         0x00000000c010aa33        0x1 
+ .rodata        0x00000000c010aa34      0xea0 tests/tests.o
+ .rodata        0x00000000c010b8d4       0xd4 libc/libk.a(vsprintf.o)
+ *(.rodata.*)
+                0x00000000c010b9a8                krodata_end = .
+                0x00000000c010b9a8                kdata_start = .
+
+.rel.dyn        0x00000000c010b9a8        0x0
+ .rel.got       0x00000000c010b9a8        0x0 init/init.o
+ .rel.iplt      0x00000000c010b9a8        0x0 init/init.o
+ .rel.text      0x00000000c010b9a8        0x0 init/init.o
+
+.data           0x00000000c010b9c0      0x128
+ *(.data)
+ .data          0x00000000c010b9c0        0x0 init/init.o
+ .data          0x00000000c010b9c0        0x0 mm/mm.o
+ .data          0x00000000c010b9c0        0x4 driver/driver.o
+ .data          0x00000000c010b9c4        0xc proc/proc.o
+                0x00000000c010b9cc                global_tss
+ .data          0x00000000c010b9d0       0x28 fs/fs.o
+                0x00000000c010b9d0                fat12_fs_type
+                0x00000000c010b9f0                fs_types
+ .data          0x00000000c010b9f8       0x18 objs/impl.o
+ *fill*         0x00000000c010ba10       0x10 
+ .data          0x00000000c010ba20       0xc8 tests/tests.o
+ .data          0x00000000c010bae8        0x0 libc/libk.a(string.o)
+ .data          0x00000000c010bae8        0x0 libc/libk.a(stdio.o)
+ .data          0x00000000c010bae8        0x0 libc/libk.a(vsprintf.o)
+                0x00000000c010bae8                kdata_end = .
+                0x00000000c010bae8                kbss_start = .
+
+.got            0x00000000c010bae8        0x0
+ .got           0x00000000c010bae8        0x0 init/init.o
+
+.got.plt        0x00000000c010bae8        0x0
+ .got.plt       0x00000000c010bae8        0x0 init/init.o
+
+.igot.plt       0x00000000c010bae8        0x0
+ .igot.plt      0x00000000c010bae8        0x0 init/init.o
+
+.bss            0x00000000c010bb00     0x1264
+ *(.bss)
+ .bss           0x00000000c010bb00       0x36 init/init.o
+ *fill*         0x00000000c010bb36        0xa 
+ .bss           0x00000000c010bb40       0xd4 mm/mm.o
+                0x00000000c010bb40                kernel_heap
+ .bss           0x00000000c010bc14       0x20 driver/driver.o
+                0x00000000c010bc2c                ticks
+                0x00000000c010bc30                freq
+ *fill*         0x00000000c010bc34        0xc 
+ .bss           0x00000000c010bc40      0x308 proc/proc.o
+ .bss           0x00000000c010bf48        0xc fs/fs.o
+ *fill*         0x00000000c010bf54        0xc 
+ .bss           0x00000000c010bf60      0xd58 objs/impl.o
+                0x00000000c010bf60                idt
+                0x00000000c010c760                idt_ptr
+ *fill*         0x00000000c010ccb8        0x8 
+ .bss           0x00000000c010ccc0       0xa0 tests/tests.o
+ .bss           0x00000000c010cd60        0x4 libc/libk.a(string.o)
+ .bss           0x00000000c010cd64        0x0 libc/libk.a(stdio.o)
+ .bss           0x00000000c010cd64        0x0 libc/libk.a(vsprintf.o)
+                0x00000000c010cd64                kbss_end = .
+
+/DISCARD/
+ *(.eh_frame .note.GNU-stack)
+                0x00000000c010cd64                kernel_end = .
+LOAD init/init.o
+LOAD mm/mm.o
+LOAD driver/driver.o
+LOAD proc/proc.o
+LOAD fs/fs.o
+LOAD objs/impl.o
+LOAD tests/tests.o
+LOAD libc/libk.a
+OUTPUT(kernel.elf elf32-i386)
+
+.comment        0x0000000000000000       0x2d
+ .comment       0x0000000000000000       0x2d init/init.o
+                                         0x8a (size before relaxing)
+ .comment       0x000000000000002d       0x8a mm/mm.o
+ .comment       0x000000000000002d      0x114 driver/driver.o
+ .comment       0x000000000000002d       0x8a proc/proc.o
+ .comment       0x000000000000002d       0x5c fs/fs.o
+ .comment       0x000000000000002d      0x114 objs/impl.o
+ .comment       0x000000000000002d       0xe6 tests/tests.o
+ .comment       0x000000000000002d       0x2e libc/libk.a(string.o)
+ .comment       0x000000000000002d       0x2e libc/libk.a(stdio.o)
+ .comment       0x000000000000002d       0x2e libc/libk.a(vsprintf.o)
+
+.debug_aranges  0x0000000000000000      0x420
+ .debug_aranges
+                0x0000000000000000       0x80 init/init.o
+ .debug_aranges
+                0x0000000000000080       0x60 mm/mm.o
+ .debug_aranges
+                0x00000000000000e0       0xc0 driver/driver.o
+ .debug_aranges
+                0x00000000000001a0       0x60 proc/proc.o
+ .debug_aranges
+                0x0000000000000200       0x40 fs/fs.o
+ .debug_aranges
+                0x0000000000000240       0xe0 objs/impl.o
+ .debug_aranges
+                0x0000000000000320       0xa0 tests/tests.o
+ .debug_aranges
+                0x00000000000003c0       0x20 libc/libk.a(string.o)
+ .debug_aranges
+                0x00000000000003e0       0x20 libc/libk.a(stdio.o)
+ .debug_aranges
+                0x0000000000000400       0x20 libc/libk.a(vsprintf.o)
+
+.debug_info     0x0000000000000000     0xb41c
+ .debug_info    0x0000000000000000      0xe30 init/init.o
+ .debug_info    0x0000000000000e30     0x1974 mm/mm.o
+ .debug_info    0x00000000000027a4     0x1a2e driver/driver.o
+ .debug_info    0x00000000000041d2     0x12ef proc/proc.o
+ .debug_info    0x00000000000054c1     0x1614 fs/fs.o
+ .debug_info    0x0000000000006ad5     0x2227 objs/impl.o
+ .debug_info    0x0000000000008cfc     0x1ba1 tests/tests.o
+ .debug_info    0x000000000000a89d      0x53b libc/libk.a(string.o)
+ .debug_info    0x000000000000add8      0x195 libc/libk.a(stdio.o)
+ .debug_info    0x000000000000af6d      0x4af libc/libk.a(vsprintf.o)
+
+.debug_abbrev   0x0000000000000000     0x365b
+ .debug_abbrev  0x0000000000000000      0x4db init/init.o
+ .debug_abbrev  0x00000000000004db      0x772 mm/mm.o
+ .debug_abbrev  0x0000000000000c4d      0x9e2 driver/driver.o
+ .debug_abbrev  0x000000000000162f      0x57c proc/proc.o
+ .debug_abbrev  0x0000000000001bab      0x489 fs/fs.o
+ .debug_abbrev  0x0000000000002034      0xacd objs/impl.o
+ .debug_abbrev  0x0000000000002b01      0x7bb tests/tests.o
+ .debug_abbrev  0x00000000000032bc      0x15e libc/libk.a(string.o)
+ .debug_abbrev  0x000000000000341a      0x101 libc/libk.a(stdio.o)
+ .debug_abbrev  0x000000000000351b      0x140 libc/libk.a(vsprintf.o)
+
+.debug_line     0x0000000000000000     0x7630
+ .debug_line    0x0000000000000000      0xace init/init.o
+ .debug_line    0x0000000000000ace     0x10d0 mm/mm.o
+ .debug_line    0x0000000000001b9e     0x127a driver/driver.o
+ .debug_line    0x0000000000002e18      0xc5a proc/proc.o
+ .debug_line    0x0000000000003a72      0xafe fs/fs.o
+ .debug_line    0x0000000000004570     0x13de objs/impl.o
+ .debug_line    0x000000000000594e     0x1059 tests/tests.o
+ .debug_line    0x00000000000069a7      0x4bd libc/libk.a(string.o)
+ .debug_line    0x0000000000006e64      0x1a2 libc/libk.a(stdio.o)
+ .debug_line    0x0000000000007006      0x62a libc/libk.a(vsprintf.o)
+
+.debug_str      0x0000000000000000     0x9f78
+ .debug_str     0x0000000000000000     0x65ba init/init.o
+                                       0xd215 (size before relaxing)
+ .debug_str     0x00000000000065ba      0x7af mm/mm.o
+                                       0xc427 (size before relaxing)
+ .debug_str     0x0000000000006d69      0xfab driver/driver.o
+                                      0x175ea (size before relaxing)
+ .debug_str     0x0000000000007d14      0x48f proc/proc.o
+                                       0xace7 (size before relaxing)
+ .debug_str     0x00000000000081a3      0x5d5 fs/fs.o
+                                       0x7a67 (size before relaxing)
+ .debug_str     0x0000000000008778      0xec4 objs/impl.o
+                                      0x16bb0 (size before relaxing)
+ .debug_str     0x000000000000963c      0x72d tests/tests.o
+                                      0x11f04 (size before relaxing)
+ .debug_str     0x0000000000009d69       0x80 libc/libk.a(string.o)
+                                       0x2d04 (size before relaxing)
+ .debug_str     0x0000000000009de9       0x2b libc/libk.a(stdio.o)
+                                       0x3755 (size before relaxing)
+ .debug_str     0x0000000000009e14      0x164 libc/libk.a(vsprintf.o)
+                                       0x2e5b (size before relaxing)
+
+.debug_macro    0x0000000000000000     0x3f27
+ .debug_macro   0x0000000000000000      0x2bb init/init.o
+ .debug_macro   0x00000000000002bb      0x844 init/init.o
+ .debug_macro   0x0000000000000aff       0x16 init/init.o
+ .debug_macro   0x0000000000000b15       0x82 init/init.o
+ .debug_macro   0x0000000000000b97       0x82 init/init.o
+ .debug_macro   0x0000000000000c19       0x16 init/init.o
+ .debug_macro   0x0000000000000c2f       0x10 init/init.o
+ .debug_macro   0x0000000000000c3f       0x88 init/init.o
+ .debug_macro   0x0000000000000cc7       0x22 init/init.o
+ .debug_macro   0x0000000000000ce9       0x58 init/init.o
+ .debug_macro   0x0000000000000d41       0x40 init/init.o
+ .debug_macro   0x0000000000000d81       0x22 init/init.o
+ .debug_macro   0x0000000000000da3      0x160 init/init.o
+ .debug_macro   0x0000000000000f03       0x52 init/init.o
+ .debug_macro   0x0000000000000f55       0x8e init/init.o
+ .debug_macro   0x0000000000000fe3      0x1d8 init/init.o
+ .debug_macro   0x00000000000011bb      0x1e9 init/init.o
+ .debug_macro   0x00000000000013a4       0x88 init/init.o
+ .debug_macro   0x000000000000142c       0x46 init/init.o
+ .debug_macro   0x0000000000001472       0x10 init/init.o
+ .debug_macro   0x0000000000001482       0x76 init/init.o
+ .debug_macro   0x00000000000014f8       0x8e init/init.o
+ .debug_macro   0x0000000000001586       0x3a init/init.o
+ .debug_macro   0x00000000000015c0       0x2e init/init.o
+ .debug_macro   0x00000000000015ee       0x10 init/init.o
+ .debug_macro   0x00000000000015fe       0x2e init/init.o
+ .debug_macro   0x000000000000162c       0x10 init/init.o
+ .debug_macro   0x000000000000163c       0x58 init/init.o
+ .debug_macro   0x0000000000001694       0x50 init/init.o
+ .debug_macro   0x00000000000016e4       0x76 init/init.o
+ .debug_macro   0x000000000000175a       0xe8 init/init.o
+ .debug_macro   0x0000000000001842      0x27c mm/mm.o
+ .debug_macro   0x0000000000001abe      0x838 mm/mm.o
+ .debug_macro   0x00000000000022f6       0x3a mm/mm.o
+ .debug_macro   0x0000000000002330       0x64 mm/mm.o
+ .debug_macro   0x0000000000002394       0x16 mm/mm.o
+ .debug_macro   0x00000000000023aa       0x70 mm/mm.o
+ .debug_macro   0x000000000000241a      0x3f2 driver/driver.o
+ .debug_macro   0x000000000000280c      0x1bd driver/driver.o
+ .debug_macro   0x00000000000029c9      0x1d2 driver/driver.o
+ .debug_macro   0x0000000000002b9b      0x1c3 driver/driver.o
+ .debug_macro   0x0000000000002d5e       0x4a driver/driver.o
+ .debug_macro   0x0000000000002da8       0xa6 driver/driver.o
+ .debug_macro   0x0000000000002e4e      0x1e3 driver/driver.o
+ .debug_macro   0x0000000000003031       0xee driver/driver.o
+ .debug_macro   0x000000000000311f       0x34 driver/driver.o
+ .debug_macro   0x0000000000003153      0x1b9 proc/proc.o
+ .debug_macro   0x000000000000330c      0x189 fs/fs.o
+ .debug_macro   0x0000000000003495      0x39c objs/impl.o
+ .debug_macro   0x0000000000003831       0x40 objs/impl.o
+ .debug_macro   0x0000000000003871      0x166 objs/impl.o
+ .debug_macro   0x00000000000039d7       0x10 objs/impl.o
+ .debug_macro   0x00000000000039e7       0x40 objs/impl.o
+ .debug_macro   0x0000000000003a27      0x2e0 tests/tests.o
+ .debug_macro   0x0000000000003d07       0x2e tests/tests.o
+ .debug_macro   0x0000000000003d35       0x2e tests/tests.o
+ .debug_macro   0x0000000000003d63       0x34 tests/tests.o
+ .debug_macro   0x0000000000003d97       0x3f libc/libk.a(string.o)
+ .debug_macro   0x0000000000003dd6       0x8f libc/libk.a(stdio.o)
+ .debug_macro   0x0000000000003e65       0xc2 libc/libk.a(vsprintf.o)
+
+.debug_ranges   0x0000000000000000       0x78
+ .debug_ranges  0x0000000000000000       0x18 mm/mm.o
+ .debug_ranges  0x0000000000000018       0x18 fs/fs.o
+ .debug_ranges  0x0000000000000030       0x48 libc/libk.a(string.o)

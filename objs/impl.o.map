@@ -1,0 +1,682 @@
+
+Discarded input sections
+
+ .group         0x0000000000000000        0xc interrupts.o
+ .group         0x0000000000000000        0xc interrupts.o
+ .group         0x0000000000000000        0xc interrupts.o
+ .debug_macro   0x0000000000000000      0x838 interrupts.o
+ .debug_macro   0x0000000000000000       0x16 interrupts.o
+ .debug_macro   0x0000000000000000       0x82 interrupts.o
+ .group         0x0000000000000000        0xc keyboard.o
+ .group         0x0000000000000000        0xc keyboard.o
+ .group         0x0000000000000000        0xc keyboard.o
+ .group         0x0000000000000000        0xc keyboard.o
+ .group         0x0000000000000000        0xc keyboard.o
+ .group         0x0000000000000000        0xc keyboard.o
+ .group         0x0000000000000000        0xc keyboard.o
+ .debug_macro   0x0000000000000000      0x838 keyboard.o
+ .debug_macro   0x0000000000000000       0x16 keyboard.o
+ .debug_macro   0x0000000000000000       0x82 keyboard.o
+ .debug_macro   0x0000000000000000       0x16 keyboard.o
+ .debug_macro   0x0000000000000000       0x52 keyboard.o
+ .debug_macro   0x0000000000000000       0x22 keyboard.o
+ .debug_macro   0x0000000000000000       0x64 keyboard.o
+ .group         0x0000000000000000        0xc syscall.o
+ .group         0x0000000000000000        0xc syscall.o
+ .group         0x0000000000000000        0xc syscall.o
+ .group         0x0000000000000000        0xc syscall.o
+ .group         0x0000000000000000        0xc syscall.o
+ .group         0x0000000000000000        0xc syscall.o
+ .group         0x0000000000000000        0xc syscall.o
+ .group         0x0000000000000000        0xc syscall.o
+ .group         0x0000000000000000        0xc syscall.o
+ .group         0x0000000000000000        0xc syscall.o
+ .debug_macro   0x0000000000000000      0x838 syscall.o
+ .debug_macro   0x0000000000000000       0x16 syscall.o
+ .debug_macro   0x0000000000000000       0x82 syscall.o
+ .debug_macro   0x0000000000000000       0x16 syscall.o
+ .debug_macro   0x0000000000000000       0x52 syscall.o
+ .debug_macro   0x0000000000000000       0x50 syscall.o
+ .debug_macro   0x0000000000000000       0x3a syscall.o
+ .debug_macro   0x0000000000000000       0x22 syscall.o
+ .debug_macro   0x0000000000000000       0x22 syscall.o
+ .debug_macro   0x0000000000000000       0x64 syscall.o
+ .group         0x0000000000000000        0xc tty.o
+ .group         0x0000000000000000        0xc tty.o
+ .group         0x0000000000000000        0xc tty.o
+ .group         0x0000000000000000        0xc tty.o
+ .group         0x0000000000000000        0xc tty.o
+ .group         0x0000000000000000        0xc tty.o
+ .group         0x0000000000000000        0xc tty.o
+ .group         0x0000000000000000        0xc tty.o
+ .group         0x0000000000000000        0xc tty.o
+ .group         0x0000000000000000        0xc tty.o
+ .debug_macro   0x0000000000000000      0x838 tty.o
+ .debug_macro   0x0000000000000000       0x16 tty.o
+ .debug_macro   0x0000000000000000       0x82 tty.o
+ .debug_macro   0x0000000000000000       0x16 tty.o
+ .debug_macro   0x0000000000000000       0x22 tty.o
+ .debug_macro   0x0000000000000000       0x40 tty.o
+ .debug_macro   0x0000000000000000      0x166 tty.o
+ .debug_macro   0x0000000000000000       0x50 tty.o
+ .debug_macro   0x0000000000000000       0x22 tty.o
+ .debug_macro   0x0000000000000000       0x64 tty.o
+ .group         0x0000000000000000        0xc vga.o
+ .group         0x0000000000000000        0xc vga.o
+ .group         0x0000000000000000        0xc vga.o
+ .group         0x0000000000000000        0xc vga.o
+ .group         0x0000000000000000        0xc vga.o
+ .group         0x0000000000000000        0xc vga.o
+ .debug_macro   0x0000000000000000      0x838 vga.o
+ .debug_macro   0x0000000000000000       0x16 vga.o
+ .debug_macro   0x0000000000000000       0x82 vga.o
+ .debug_macro   0x0000000000000000       0x16 vga.o
+ .debug_macro   0x0000000000000000       0x3a vga.o
+ .debug_macro   0x0000000000000000       0x50 vga.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD idt.o
+LOAD interrupts.o
+LOAD isr.o
+LOAD keyboard.o
+LOAD syscall.o
+LOAD tty.o
+LOAD vga.o
+
+.interp
+ *(.interp)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rel.text
+ *(.rel.text)
+
+.rel.fini
+ *(.rel.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+
+.rel.data.rel.ro
+ *(.rel.data.rel.ro)
+
+.rel.data
+ *(.rel.data)
+
+.rel.tdata
+ *(.rel.tdata)
+
+.rel.tbss
+ *(.rel.tbss)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rel.ifunc
+ *(.rel.ifunc)
+
+.rel.plt
+ *(.rel.plt)
+
+.relr.dyn
+ *(.relr.dyn)
+
+.init
+ *(SORT_NONE(.init))
+
+.plt
+ *(.plt)
+
+.plt.got
+ *(.plt.got)
+
+.plt.sec
+ *(.plt.sec)
+
+.text           0x0000000000000000     0x1995
+ *(.text .stub)
+ .text          0x0000000000000000      0x57f idt.o
+                0x000000000000004e                idt_init
+                0x0000000000000575                get_idt_ptr
+ .text          0x000000000000057f       0xff interrupts.o
+                0x00000000000005a6                setup_x86_interrutps
+                0x00000000000005db                register_interrupt_handler
+                0x00000000000005f8                unregister_interrupt_handler
+                0x0000000000000616                get_interrupt_handler
+                0x000000000000062f                interrupt_dispatch
+ .text          0x000000000000067e      0x191 isr.o
+                0x000000000000067e                isr0
+                0x0000000000000687                isr1
+                0x0000000000000690                isr2
+                0x0000000000000699                isr3
+                0x00000000000006a2                isr4
+                0x00000000000006ab                isr5
+                0x00000000000006b4                isr6
+                0x00000000000006bd                isr7
+                0x00000000000006c6                isr8
+                0x00000000000006cd                isr9
+                0x00000000000006d6                isr10
+                0x00000000000006dd                isr11
+                0x00000000000006e4                isr12
+                0x00000000000006eb                isr13
+                0x00000000000006f2                isr14
+                0x00000000000006f9                isr15
+                0x0000000000000702                isr16
+                0x000000000000070b                isr17
+                0x0000000000000712                isr18
+                0x000000000000071b                isr19
+                0x0000000000000724                isr20
+                0x000000000000072d                isr21
+                0x0000000000000734                isr22
+                0x000000000000073d                isr23
+                0x0000000000000746                isr24
+                0x000000000000074f                isr25
+                0x0000000000000758                isr26
+                0x0000000000000761                isr27
+                0x000000000000076a                isr28
+                0x0000000000000770                isr29
+                0x0000000000000776                isr30
+                0x000000000000077c                isr31
+                0x0000000000000782                isr32
+                0x0000000000000788                isr33
+                0x000000000000078e                isr34
+                0x0000000000000794                isr35
+                0x000000000000079a                isr36
+                0x00000000000007a0                isr37
+                0x00000000000007a6                isr38
+                0x00000000000007ac                isr39
+                0x00000000000007b2                isr40
+                0x00000000000007b8                isr41
+                0x00000000000007be                isr42
+                0x00000000000007c4                isr43
+                0x00000000000007ca                isr44
+                0x00000000000007d0                isr45
+                0x00000000000007d6                isr46
+                0x00000000000007dc                isr47
+                0x00000000000007e2                isr128
+ .text          0x000000000000080f      0x944 keyboard.o
+                0x0000000000000d3a                kbd_init
+                0x0000000000000dda                kbd_get_lastscancode
+                0x0000000000000de6                kbd_get_lastkey
+                0x0000000000000e0e                kbd_getlastkey_buf
+                0x0000000000000e21                kbd_clear_lastkey
+                0x0000000000000e2e                kbd_keycode_to_ascii
+                0x0000000000000f61                kbd_get_numlock
+                0x0000000000000f6d                kbd_get_capslock
+                0x0000000000000f79                kbd_get_scrolllock
+                0x0000000000000f85                kbd_get_shift
+                0x0000000000000f91                kbd_get_ctrl
+                0x0000000000000f9d                kbd_get_alt
+                0x0000000000000fa9                kbd_ignore_resend
+                0x0000000000000fb6                kbd_should_resend
+                0x0000000000000fc2                kbd_set_leds
+                0x0000000000001046                kbd_self_test
+                0x0000000000001072                kbd_bat_result
+                0x000000000000107e                kbd_diag_result
+                0x000000000000108a                kbd_is_enabled
+                0x0000000000001096                kbd_setstate
+ .text          0x0000000000001153       0xc5 syscall.o
+                0x0000000000001153                syscall_init
+ .text          0x0000000000001218      0x63b tty.o
+                0x0000000000001218                tty_init
+                0x000000000000122b                terminal_getc
+                0x0000000000001253                terminal_read
+                0x00000000000012b8                terminal_stdin_init
+                0x00000000000012c6                terminal_move_cursor
+                0x0000000000001328                terminal_clear_scr
+                0x00000000000013ce                terminal_clear_log
+                0x0000000000001474                terminal_setcolor
+                0x000000000000148c                terminal_get_colour
+                0x0000000000001498                terminal_settext_color
+                0x00000000000014d0                terminal_setbg_color
+                0x0000000000001508                terminal_reset_color
+                0x000000000000152f                terminal_stdout_init
+                0x0000000000001572                terminal_putc
+                0x00000000000017e6                terminal_write
+                0x000000000000182d                terminal_writestring
+ .text          0x0000000000001853      0x142 vga.o
+                0x0000000000001872                vga_entry_color
+                0x0000000000001884                vga_entry
+                0x00000000000018a5                vga_move_cursor_to
+                0x000000000000192e                vga_putentry_at
+                0x000000000000198b                vga_get_screen_buffer
+ *(.gnu.warning)
+
+.fini
+ *(SORT_NONE(.fini))
+
+.rodata         0x0000000000000000      0x393
+ *(.rodata)
+ .rodata        0x0000000000000000      0x36b keyboard.o
+ .rodata        0x000000000000036b       0x28 syscall.o
+
+.rodata1
+ *(.rodata1)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame       0x0000000000000000      0x8cc
+ *(.eh_frame)
+ .eh_frame      0x0000000000000000       0x78 idt.o
+ .eh_frame      0x0000000000000078       0xf8 interrupts.o
+ .eh_frame      0x0000000000000170      0x3fc keyboard.o
+ .eh_frame      0x000000000000056c       0x64 syscall.o
+ .eh_frame      0x00000000000005d0      0x224 tty.o
+ .eh_frame      0x00000000000007f4       0xd8 vga.o
+
+.gcc_except_table
+ *(.gcc_except_table)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges)
+
+.eh_frame
+ *(.eh_frame)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table)
+
+.exception_ranges
+ *(.exception_ranges)
+
+.tdata
+ *(.tdata)
+
+.tbss
+ *(.tbss)
+
+.jcr
+ *(.jcr)
+
+.dynamic
+ *(.dynamic)
+
+.got
+ *(.got)
+
+.got.plt
+ *(.got.plt)
+
+.data           0x0000000000000000       0x18
+ *(.data)
+ .data          0x0000000000000000        0x0 idt.o
+ .data          0x0000000000000000        0x0 interrupts.o
+ .data          0x0000000000000000        0x0 isr.o
+ .data          0x0000000000000000        0x0 keyboard.o
+ .data          0x0000000000000000       0x14 syscall.o
+ .data          0x0000000000000014        0x0 tty.o
+ .data          0x0000000000000014        0x4 vga.o
+
+.data1
+ *(.data1)
+
+.bss            0x0000000000000000      0xd58
+ *(.bss)
+ .bss           0x0000000000000000      0x806 idt.o
+                0x0000000000000000                idt
+                0x0000000000000800                idt_ptr
+ *fill*         0x0000000000000806       0x1a 
+ .bss           0x0000000000000820      0x400 interrupts.o
+ .bss           0x0000000000000c20        0x0 isr.o
+ .bss           0x0000000000000c20      0x129 keyboard.o
+ .bss           0x0000000000000d49        0x0 syscall.o
+ *fill*         0x0000000000000d49        0x3 
+ .bss           0x0000000000000d4c        0xc tty.o
+ .bss           0x0000000000000d58        0x0 vga.o
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000      0x114
+ *(.comment)
+ .comment       0x0000000000000000       0x2e idt.o
+ .comment       0x000000000000002e       0x2e interrupts.o
+ .comment       0x000000000000005c       0x2e keyboard.o
+ .comment       0x000000000000008a       0x2e syscall.o
+ .comment       0x00000000000000b8       0x2e tty.o
+ .comment       0x00000000000000e6       0x2e vga.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc idt.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc idt.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc idt.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc idt.o
+
+.note.GNU-stack
+                0x0000000000000000        0x0
+ .note.GNU-stack
+                0x0000000000000000        0x0 idt.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 interrupts.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 keyboard.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 syscall.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 tty.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 vga.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc interrupts.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc interrupts.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc interrupts.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc interrupts.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc interrupts.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc interrupts.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc interrupts.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc interrupts.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc keyboard.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc keyboard.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc keyboard.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc keyboard.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc syscall.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc syscall.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc syscall.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc syscall.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc syscall.o
+
+.group          0x0000000000000000        0xc
+ .group         0x0000000000000000        0xc syscall.o
+
+.gnu.build.attributes
+ *(.gnu.build.attributes)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000       0xe0
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 idt.o
+ .debug_aranges
+                0x0000000000000020       0x20 interrupts.o
+ .debug_aranges
+                0x0000000000000040       0x20 isr.o
+ .debug_aranges
+                0x0000000000000060       0x20 keyboard.o
+ .debug_aranges
+                0x0000000000000080       0x20 syscall.o
+ .debug_aranges
+                0x00000000000000a0       0x20 tty.o
+ .debug_aranges
+                0x00000000000000c0       0x20 vga.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000     0x2227
+ *(.debug_info)
+ .debug_info    0x0000000000000000      0x488 idt.o
+ .debug_info    0x0000000000000488      0x30a interrupts.o
+ .debug_info    0x0000000000000792       0x26 isr.o
+ .debug_info    0x00000000000007b8      0xb8d keyboard.o
+ .debug_info    0x0000000000001345      0x34a syscall.o
+ .debug_info    0x000000000000168f      0x93d tty.o
+ .debug_info    0x0000000000001fcc      0x25b vga.o
+
+.debug_abbrev   0x0000000000000000      0xacd
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x12e idt.o
+ .debug_abbrev  0x000000000000012e      0x1a5 interrupts.o
+ .debug_abbrev  0x00000000000002d3       0x14 isr.o
+ .debug_abbrev  0x00000000000002e7      0x32d keyboard.o
+ .debug_abbrev  0x0000000000000614      0x184 syscall.o
+ .debug_abbrev  0x0000000000000798      0x1fd tty.o
+ .debug_abbrev  0x0000000000000995      0x138 vga.o
+
+.debug_line     0x0000000000000000     0x13de
+ *(.debug_line)
+ .debug_line    0x0000000000000000      0x1a1 idt.o
+ .debug_line    0x00000000000001a1      0x24c interrupts.o
+ .debug_line    0x00000000000003ed       0x78 isr.o
+ .debug_line    0x0000000000000465      0x5d5 keyboard.o
+ .debug_line    0x0000000000000a3a      0x2fd syscall.o
+ .debug_line    0x0000000000000d37      0x4d8 tty.o
+ .debug_line    0x000000000000120f      0x1cf vga.o
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str      0x0000000000000000    0x16bb0
+ *(.debug_str)
+ .debug_str     0x0000000000000000     0x2edd idt.o
+ .debug_str     0x0000000000002edd     0x3bf3 interrupts.o
+ .debug_str     0x0000000000006ad0       0x40 isr.o
+ .debug_str     0x0000000000006b10     0x475b keyboard.o
+ .debug_str     0x000000000000b26b     0x4234 syscall.o
+ .debug_str     0x000000000000f49f     0x448a tty.o
+ .debug_str     0x0000000000013929     0x3287 vga.o
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_addr
+ *(.debug_addr)
+
+.debug_line_str
+ *(.debug_line_str)
+
+.debug_loclists
+ *(.debug_loclists)
+
+.debug_macro    0x0000000000000000      0x39c
+ *(.debug_macro)
+ .debug_macro   0x0000000000000000       0x58 idt.o
+ .debug_macro   0x0000000000000058       0xad interrupts.o
+ .debug_macro   0x0000000000000105       0xb9 keyboard.o
+ .debug_macro   0x00000000000001be       0xe6 syscall.o
+ .debug_macro   0x00000000000002a4       0xa4 tty.o
+ .debug_macro   0x0000000000000348       0x54 vga.o
+
+.debug_names
+ *(.debug_names)
+
+.debug_rnglists
+ *(.debug_rnglists)
+
+.debug_str_offsets
+ *(.debug_str_offsets)
+
+.debug_sup
+ *(.debug_sup)
+
+.gnu.attributes
+ *(.gnu.attributes)
+OUTPUT(impl.o elf32-i386)
+
+.debug_macro    0x0000000000000000      0x838
+ .debug_macro   0x0000000000000000      0x838 idt.o
+
+.debug_macro    0x0000000000000000       0x16
+ .debug_macro   0x0000000000000000       0x16 idt.o
+
+.debug_macro    0x0000000000000000       0x82
+ .debug_macro   0x0000000000000000       0x82 idt.o
+
+.debug_macro    0x0000000000000000       0x40
+ .debug_macro   0x0000000000000000       0x40 idt.o
+
+.debug_macro    0x0000000000000000       0x16
+ .debug_macro   0x0000000000000000       0x16 interrupts.o
+
+.debug_macro    0x0000000000000000       0x4a
+ .debug_macro   0x0000000000000000       0x4a interrupts.o
+
+.debug_macro    0x0000000000000000       0x52
+ .debug_macro   0x0000000000000000       0x52 interrupts.o
+
+.debug_macro    0x0000000000000000       0x46
+ .debug_macro   0x0000000000000000       0x46 interrupts.o
+
+.debug_macro    0x0000000000000000       0xa6
+ .debug_macro   0x0000000000000000       0xa6 interrupts.o
+
+.debug_macro    0x0000000000000000       0x22
+ .debug_macro   0x0000000000000000       0x22 interrupts.o
+
+.debug_macro    0x0000000000000000       0x40
+ .debug_macro   0x0000000000000000       0x40 interrupts.o
+
+.debug_macro    0x0000000000000000       0x64
+ .debug_macro   0x0000000000000000       0x64 interrupts.o
+
+.debug_macro    0x0000000000000000       0x22
+ .debug_macro   0x0000000000000000       0x22 keyboard.o
+
+.debug_macro    0x0000000000000000      0x166
+ .debug_macro   0x0000000000000000      0x166 keyboard.o
+
+.debug_macro    0x0000000000000000       0x50
+ .debug_macro   0x0000000000000000       0x50 keyboard.o
+
+.debug_macro    0x0000000000000000       0x3a
+ .debug_macro   0x0000000000000000       0x3a keyboard.o
+
+.debug_macro    0x0000000000000000       0x2e
+ .debug_macro   0x0000000000000000       0x2e syscall.o
+
+.debug_macro    0x0000000000000000       0x76
+ .debug_macro   0x0000000000000000       0x76 syscall.o
+
+.debug_macro    0x0000000000000000       0x8e
+ .debug_macro   0x0000000000000000       0x8e syscall.o
+
+.debug_macro    0x0000000000000000       0x3a
+ .debug_macro   0x0000000000000000       0x3a syscall.o
+
+.debug_macro    0x0000000000000000       0x10
+ .debug_macro   0x0000000000000000       0x10 syscall.o
+
+.debug_macro    0x0000000000000000       0x40
+ .debug_macro   0x0000000000000000       0x40 syscall.o

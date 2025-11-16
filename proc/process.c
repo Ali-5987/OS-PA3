@@ -13,10 +13,11 @@
 #include <log.h>
 static process_t *current_proc = NULL;
 static thread_t *current_thread = NULL;
-static process_t *process_table[128] = {NULL}; // Initialize all to NULL
+static process_t *process_table[128] = {NULL};
 static int current_pid = 1;
 static int current_tid = 1;
 static thread_t *queue[PROCESS_PRI_MAX + 1];
+static thread_t *queue_tail[PROCESS_PRI_MAX + 1];
 void process_create(process_t *process, const char *name, int32_t priority)
 {
     process->state = 1;
@@ -49,8 +50,10 @@ void process_destroy(process_t *process)
         return;
     process->state = STATE_TERMINATED;
 
-    for (int i = 0; i < 128; ++i) {
-        if (process_table[i] == process) {
+    for (int i = 0; i < 128; ++i)
+    {
+        if (process_table[i] == process)
+        {
             process_table[i] = NULL;
             break;
         }
@@ -88,28 +91,31 @@ int32_t process_spawn(const char *filename)
 int32_t process_fork()
 {
     cli();
-    process_t* parent_proc = get_current_proc();
-    thread_t* parent_thread = get_current_thread();
-    
-    if (!parent_proc || !parent_thread || !parent_thread->trap_frame) 
+    process_t *parent_proc = get_current_proc();
+    thread_t *parent_thread = get_current_thread();
+
+    if (!parent_proc || !parent_thread || !parent_thread->trap_frame)
     {
         sti();
-        return -1; 
+        return -1;
     }
 
-    process_t* child_proc = malloc(sizeof(process_t));
-    if (!child_proc) {
+    process_t *child_proc = malloc(sizeof(process_t));
+    if (!child_proc)
+    {
         sti();
         return -1;
     }
     process_create(child_proc, parent_proc->name, parent_proc->priority);
-    if (!child_proc->dir) {
+    if (!child_proc->dir)
+    {
         free(child_proc);
         sti();
         return -1;
     }
-    pagedir_t* child_dir = vmm_clone_pagedir();
-    if (!child_dir) {
+    pagedir_t *child_dir = vmm_clone_pagedir();
+    if (!child_dir)
+    {
         free(child_proc->dir);
         free(child_proc);
         sti();
@@ -117,9 +123,10 @@ int32_t process_fork()
     }
     free(child_proc->dir);
     child_proc->dir = child_dir;
-    thread_t* child_thread = _get_main_thread(child_proc);
-    if (!child_thread) {
-        vmm_free_region(child_dir, (void*)0x0, 0xC0000000);
+    thread_t *child_thread = _get_main_thread(child_proc);
+    if (!child_thread)
+    {
+        vmm_free_region(child_dir, (void *)0x0, 0xC0000000);
         free(child_dir);
         free(child_proc);
         sti();
@@ -281,7 +288,10 @@ void scheduler_init(void)
     kernel_thread->kernel = NULL;
     kernel_thread->trap_frame = NULL;
     for (int i = 0; i <= PROCESS_PRI_MAX; i++)
+    {
         queue[i] = NULL;
+        queue_tail[i] = NULL;
+    }
     current_proc = kernel_process;
     current_thread = kernel_thread;
 }
@@ -341,16 +351,15 @@ void scheduler_post(thread_t *thread)
 
     thread->state = STATE_READY;
     thread->next_ready = NULL;
-    thread_t *head = queue[thread->priority];
-    if (!head)
+    if (!queue[thread->priority])
+    {
         queue[thread->priority] = thread;
+        queue_tail[thread->priority] = thread;
+    }
     else
     {
-        while (head->next_ready)
-        {
-            head = head->next_ready;
-        }
-        head->next_ready = thread;
+        queue_tail[thread->priority]->next_ready = thread;
+        queue_tail[thread->priority] = thread;
     }
     sti();
 }
