@@ -4,6 +4,7 @@
 #include <driver/timer.h>
 #include <interrupts.h>
 #include <utils.h>
+#include <proc/process.h>
 uint32_t ticks =0;
 uint32_t freq=0;
 void init_system_timer(uint32_t frequency)

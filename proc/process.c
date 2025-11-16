@@ -5,6 +5,7 @@
 #include <../include/proc/process.h>
 #include <../include/mm/vmm.h>
 #include <../include/mm/kheap.h>
+#include <../include/utils.h>
 //#include <../include/mm/kheap.h>
 #define LOG_MOD_NAME 	"PRC"
 #define LOG_MOD_ENABLE  1
@@ -20,6 +21,12 @@ void process_create(process_t* process, const char* name, int32_t priority)
     process->Pid = current_pid;
     current_pid++;
     process->dir = vmm_create_address_space();
+    // pagedir_t* kernel_dir = vmm_get_kerneldir();
+    // process->dir->table[0] = kernel_dir->table[0];
+    // for (int i = 768; i < 1024; i++)
+    // {
+    //     process->dir->table[i] = kernel_dir->table[i];
+    // }
    // memcpy(process->dir,vmm_get_kerneldir(),sizeof(pagedir_t));
     process->priority = priority;
     strncpy(process->name, name,31);
@@ -64,7 +71,7 @@ thread_t* _get_main_thread(process_t* process)
 {   if (!process)
         return NULL;
     if (!process->threads) {
-        process->threads = thread_create(process, NULL, NULL);
+        process->threads = thread_create(process, thread_exit, NULL);
     }
     
     return process->threads;
@@ -83,7 +90,7 @@ thread_t* thread_create(process_t* parent_process, void* entry, void* arg)
     thisthread->parent = parent_process;
     thisthread->state = 1;
     thisthread->next = parent_process->threads;
-    thisthread->priority =5;
+    thisthread->priority = PROCESS_PRI_DEFAULT;
     thisthread->time_slice = SLICE;
     thisthread->next_ready = NULL;
     parent_process->threads = thisthread;
@@ -98,17 +105,18 @@ thread_t* thread_create(process_t* parent_process, void* entry, void* arg)
     thisthread->trap_frame = context;
     context->cs = 0x1B;
     context->ds = 0x23;
-    context->ss = 0x23;     
+    context->ss = 0x23;         
     context->eflags = 0x202;
     return thisthread;
 }
 int32_t thread_destroy(thread_t* thread)
-{   if (!thread)
-    return -1;
+{   cli();
+    if (!thread)
+    {sti(); return -1;}
     if (thread->state == STATE_RUNNING)
-    return -1;
+   {sti(); return -1;}
     if (!thread->parent || !thread->parent->threads)
-    return -1;
+   {sti(); return -1;}
     thread_t* head = queue[thread->priority];
     if (head == thread)
     queue[thread->priority] = thread->next_ready;
@@ -135,6 +143,7 @@ int32_t thread_destroy(thread_t* thread)
 
     free(thread->kernel);
     free(thread);
+    sti();
     return 0;
 }
 void scheduler_init(void)
@@ -151,6 +160,7 @@ void scheduler_init(void)
     kernel_thread->tid = current_tid;
     current_tid++;
     kernel_thread->priority =5;
+    kernel_thread->time_slice = SLICE;
     kernel_thread->kernel = NULL;
     kernel_thread->trap_frame = NULL;
     for (int i=0;i<PROCESS_PRI_MAX;i++)
@@ -161,8 +171,8 @@ void scheduler_init(void)
 void scheduler_tick(interrupt_context_t* context)
 {
     current_thread->trap_frame = context;
-    current_thread->time_slice--;
-    if (current_thread->time_slice>0)
+    //current_thread->time_slice--;
+    if (--current_thread->time_slice>0)
     return;
     current_thread->time_slice = SLICE;
     scheduler_post(current_thread);
@@ -179,6 +189,7 @@ void scheduler_tick(interrupt_context_t* context)
     }
     if (next_thread == NULL)
     return;
+    cli();
     scheduler_switch(next_thread);
 }
 void scheduler_switch(thread_t* next_thread)
@@ -190,25 +201,24 @@ void scheduler_switch(thread_t* next_thread)
     current_thread = next_thread;
     current_proc = next_thread->parent;
     next_thread->state = STATE_RUNNING;
+    if (next_thread->kernel != NULL)
     tss_update_esp0((uint32_t)next_thread->kernel + 4 * 1024);
-    asm volatile (
-        "movl %0, %%esp \n\t"   // 1. Set the stack pointer to the new thread's context
-        "popl %%gs       \n\t"   // 2. Pop all registers from the new stack...
-        "popl %%fs       \n\t"
-        "popl %%es       \n\t"
-        "popl %%ds       \n\t"
-        "popa            \n\t"   // Pops EDI, ESI, EBP, EBX, EDX, ECX, EAX
-        "addl $8, %%esp  \n\t"   // 3. Discard interrupt number and error code
-        "iret            \n\t"   // 4. "Return" to the new thread
-        : // No outputs
-        : "r" (next_thread->trap_frame) // Input: trap_frame in any register
-        : "memory" // Clobbers memory
+asm volatile (
+        "movl %0, %%esp \n\t"   
+        "popl %%ds       \n\t"   
+        "popa            \n\t"   
+        "addl $8, %%esp  \n\t"   
+        "iret            \n\t"   
+        : 
+        : "r" (next_thread->trap_frame) 
+        : "memory" 
     );
 }
 void scheduler_post(thread_t* thread)
-{
+{   cli();
     if (!thread || thread->state == STATE_RUNNING)
-    return;
+    {sti();
+        return;}
     thread->state = STATE_READY;
     thread_t* head = queue[thread->priority];
     if (!head)
@@ -219,6 +229,7 @@ void scheduler_post(thread_t* thread)
         head= head->next_ready;
     }
     head->next_ready = thread;}
+    sti();
 }
 process_t* get_current_proc(void)
 {
@@ -229,7 +240,7 @@ thread_t* get_current_thread(void)
     return current_thread;
 }
 void thread_exit()
-{
+{   cli();
     current_thread->state = STATE_TERMINATED;
     thread_t* next_thread = NULL;
     for (int i = PROCESS_PRI_MAX - 1; i >= 0; i--) 

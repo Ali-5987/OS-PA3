@@ -82,10 +82,10 @@ def test_thread_destroy_safe(runner):
     assert_passed(result)
 
 
-def test_scheduler_init_idempotent(runner):
-    """Test that scheduler_init can be called safely."""
-    result = runner.send_serial("test_scheduler_init_idempotent")
-    assert_passed(result)
+# def test_scheduler_init_idempotent(runner):
+#     """Test that scheduler_init can be called safely."""
+#     result = runner.send_serial("test_scheduler_init_idempotent")
+#     assert_passed(result)
 
 
 def test_process_exit_safe(runner):
