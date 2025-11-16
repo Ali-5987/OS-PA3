@@ -21,13 +21,13 @@ void process_create(process_t* process, const char* name, int32_t priority)
     process->Pid = current_pid;
     current_pid++;
     process->dir = vmm_create_address_space();
-    // pagedir_t* kernel_dir = vmm_get_kerneldir();
-    // process->dir->table[0] = kernel_dir->table[0];
+    pagedir_t* kernel_dir = vmm_get_kerneldir();
+    process->dir->table[0] = kernel_dir->table[0];
     // for (int i = 768; i < 1024; i++)
     // {
     //     process->dir->table[i] = kernel_dir->table[i];
     // }
-   // memcpy(process->dir,vmm_get_kerneldir(),sizeof(pagedir_t));
+   memcpy(&process->dir->table[768],&(vmm_get_kerneldir()->table[768]),256*sizeof(pde_t));
     process->priority = priority;
     strncpy(process->name, name,31);
     process->name[31] = '\0';
@@ -65,13 +65,16 @@ void process_create(process_t* process, const char* name, int32_t priority)
     return new_proc->Pid;
  }
  int32_t process_fork(){}
- process_t* process_find_by_pid(uint32_t pid){}
+ process_t* process_find_by_pid(uint32_t pid)
+ {
+    
+ }
  void process_exit(process_t* process, int32_t status){}
 thread_t* _get_main_thread(process_t* process)
 {   if (!process)
         return NULL;
     if (!process->threads) {
-        process->threads = thread_create(process, thread_exit, NULL);
+        process->threads = thread_create(process, NULL, NULL);
     }
     
     return process->threads;
@@ -95,13 +98,20 @@ thread_t* thread_create(process_t* parent_process, void* entry, void* arg)
     thisthread->next_ready = NULL;
     parent_process->threads = thisthread;
     uint32_t* stack_top = (uint32_t*)((uint32_t)thisthread->kernel + 4*1024);
-    *(--stack_top) = (uint32_t)arg;
-    *(--stack_top) = (uint32_t)thread_exit;
+    if (entry != NULL) {
+        *(--stack_top) = (uint32_t)arg;
+        *(--stack_top) = (uint32_t)thread_exit;
+    }
 
     interrupt_context_t* context = (interrupt_context_t*)((uint32_t)stack_top - sizeof(interrupt_context_t));
     memset(context, 0, sizeof(interrupt_context_t));
     context->eip = (uint32_t)entry;
-    if ((uint32_t)entry >= 0xC0000000)
+    context->esp = (uint32_t)stack_top;
+    context->useresp = (uint32_t)stack_top;
+    
+    thisthread->trap_frame = context;
+    
+    if (entry == NULL || (uint32_t)entry >= 0xC0000000)
     {
     context->cs = 0x08; 
     context->ds = 0x10; 
@@ -160,7 +170,10 @@ int32_t thread_destroy(thread_t* thread)
     return 0;
 }
 void scheduler_init(void)
-{
+{   current_proc = NULL;
+    current_thread = NULL;
+    current_pid=1;
+    current_tid=1;
     process_t* kernel_process = malloc(sizeof(process_t));
     thread_t* kernel_thread = malloc(sizeof(thread_t));
     kernel_process->dir = vmm_get_kerneldir();
@@ -176,7 +189,7 @@ void scheduler_init(void)
     kernel_thread->time_slice = SLICE;
     kernel_thread->kernel = NULL;
     kernel_thread->trap_frame = NULL;
-    for (int i=0;i<PROCESS_PRI_MAX;i++)
+    for (int i=0;i<=PROCESS_PRI_MAX;i++)
     queue[i] = NULL;
     current_proc = kernel_process;
     current_thread = kernel_thread;
@@ -229,10 +242,11 @@ asm volatile (
 }
 void scheduler_post(thread_t* thread)
 {   cli();
-    if (!thread || thread->state == STATE_RUNNING)
+    if (!thread || thread->state == STATE_TERMINATED)
     {sti();
         return;}
     thread->state = STATE_READY;
+    thread->next_ready = NULL;
     thread_t* head = queue[thread->priority];
     if (!head)
     queue[thread->priority] = thread;
