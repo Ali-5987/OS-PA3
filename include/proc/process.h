@@ -8,6 +8,7 @@
 #include <stdbool.h>
 #include "interrupts.h"
 #include "elf.h"
+#include "tss.h"
 #define PROCESS_PRI_MIN 0
 #define PROCESS_PRI_MAX 10
 #define PROCESS_PRI_DEFAULT 5
@@ -38,6 +39,7 @@ typedef struct thread
     uint32_t time_slice;
     interrupt_context_t* trap_frame;
     struct thread_t* next;
+    struct thread_t* next_ready;
 } thread_t;
 
  void process_create(process_t* process, const char* name, int32_t priority);

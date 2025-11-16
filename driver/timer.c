@@ -14,9 +14,10 @@ void init_system_timer(uint32_t frequency)
     outb((divisor>>8) & 0xFF, PIT_CHANNEL0_DATA_PORT);
     register_interrupt_handler(32,_timer_interrupt_handler);
 }
-void _timer_interrupt_handler(interrupt_context_t*)
+void _timer_interrupt_handler(interrupt_context_t* context)
 {
     ticks++;
+    scheduler_tick(context);
 }
 uint32_t get_system_tick_count()
 {

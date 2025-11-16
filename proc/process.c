@@ -23,6 +23,7 @@ void process_create(process_t* process, const char* name, int32_t priority)
    // memcpy(process->dir,vmm_get_kerneldir(),sizeof(pagedir_t));
     process->priority = priority;
     strncpy(process->name, name,31);
+    process->name[31] = '\0';
     process->threads = NULL;
 }
  void process_destroy(process_t* process)
@@ -53,6 +54,7 @@ void process_create(process_t* process, const char* name, int32_t priority)
     {process_destroy(new_proc);
         return -1;}
     new_proc->threads = thread_create(new_proc,entry,NULL);
+    scheduler_post(new_proc->threads);
     return new_proc->Pid;
  }
  int32_t process_fork(){}
@@ -82,12 +84,15 @@ thread_t* thread_create(process_t* parent_process, void* entry, void* arg)
     thisthread->state = 1;
     thisthread->next = parent_process->threads;
     thisthread->priority =5;
+    thisthread->time_slice = SLICE;
+    thisthread->next_ready = NULL;
     parent_process->threads = thisthread;
     uint32_t* stack_top = (uint32_t*)((uint32_t)thisthread->kernel + 4*1024);
     *(--stack_top) = (uint32_t)arg;
     *(--stack_top) = (uint32_t)thread_exit;
 
     interrupt_context_t* context = (interrupt_context_t*)((uint32_t)stack_top - sizeof(interrupt_context_t));
+    memset(context, 0, sizeof(interrupt_context_t));
     context->eip = (uint32_t)entry;
 
     thisthread->trap_frame = context;
@@ -104,10 +109,17 @@ int32_t thread_destroy(thread_t* thread)
     return -1;
     if (!thread->parent || !thread->parent->threads)
     return -1;
-    // if (thread->state == 1)
-    // {
-    //    queue[thread->priority]
-    // }
+    thread_t* head = queue[thread->priority];
+    if (head == thread)
+    queue[thread->priority] = thread->next_ready;
+    else
+    {   thread_t *prev = head; 
+        while (head && head != thread)
+    {   prev = head;
+        head= head->next_ready;
+    }
+    if (head)
+    prev->next_ready = head->next_ready;}
     thread_t* current = thread->parent->threads;
     if (current == thread)
     thread->parent->threads = current->next;
@@ -160,8 +172,8 @@ void scheduler_tick(interrupt_context_t* context)
         if (queue[i] != NULL) 
         {
             next_thread = queue[i];
-            queue[i] = next_thread->next; 
-            next_thread->next = NULL;
+            queue[i] = next_thread->next_ready; 
+            next_thread->next_ready = NULL;
             break;
         }
     }
@@ -169,8 +181,45 @@ void scheduler_tick(interrupt_context_t* context)
     return;
     scheduler_switch(next_thread);
 }
-void scheduler_switch(thread_t* next_thread){}
-void scheduler_post(thread_t* thread){}
+void scheduler_switch(thread_t* next_thread)
+{
+    if (!next_thread || next_thread == current_thread )
+    return;
+    if (next_thread->parent != current_thread->parent)
+    vmm_switch_pagedir(next_thread->parent->dir);
+    current_thread = next_thread;
+    current_proc = next_thread->parent;
+    next_thread->state = STATE_RUNNING;
+    tss_update_esp0((uint32_t)next_thread->kernel + 4 * 1024);
+    asm volatile (
+        "movl %0, %%esp \n\t"   // 1. Set the stack pointer to the new thread's context
+        "popl %%gs       \n\t"   // 2. Pop all registers from the new stack...
+        "popl %%fs       \n\t"
+        "popl %%es       \n\t"
+        "popl %%ds       \n\t"
+        "popa            \n\t"   // Pops EDI, ESI, EBP, EBX, EDX, ECX, EAX
+        "addl $8, %%esp  \n\t"   // 3. Discard interrupt number and error code
+        "iret            \n\t"   // 4. "Return" to the new thread
+        : // No outputs
+        : "r" (next_thread->trap_frame) // Input: trap_frame in any register
+        : "memory" // Clobbers memory
+    );
+}
+void scheduler_post(thread_t* thread)
+{
+    if (!thread || thread->state == STATE_RUNNING)
+    return;
+    thread->state = STATE_READY;
+    thread_t* head = queue[thread->priority];
+    if (!head)
+    queue[thread->priority] = thread;
+    else
+    {while (head->next_ready)
+    {
+        head= head->next_ready;
+    }
+    head->next_ready = thread;}
+}
 process_t* get_current_proc(void)
 {
     return current_proc;
@@ -181,5 +230,23 @@ thread_t* get_current_thread(void)
 }
 void thread_exit()
 {
-    return;
+    current_thread->state = STATE_TERMINATED;
+    thread_t* next_thread = NULL;
+    for (int i = PROCESS_PRI_MAX - 1; i >= 0; i--) 
+    {
+        if (queue[i] != NULL) 
+        {
+            next_thread = queue[i];
+            queue[i] = next_thread->next_ready; 
+            next_thread->next_ready = NULL;
+            break;
+        }
+    }
+
+    if (next_thread == NULL)
+    {
+        while(1) {
+        }
+    }
+    scheduler_switch(next_thread);
 }

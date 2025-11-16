@@ -176,7 +176,7 @@ LOAD build/./timer.o
 .plt.sec
  *(.plt.sec)
 
-.text           0x0000000000000000     0x1637
+.text           0x0000000000000000     0x1648
  *(.text .stub)
  .text          0x0000000000000000      0x44b build/./block.o
                 0x0000000000000000                blkdev_register
@@ -210,11 +210,11 @@ LOAD build/./timer.o
                 0x0000000000001383                serial_putc
                 0x00000000000013bf                serial_puts
                 0x00000000000013fe                serial_getc
- .text          0x000000000000155e       0xd9 build/./timer.o
+ .text          0x000000000000155e       0xea build/./timer.o
                 0x000000000000157d                init_system_timer
                 0x00000000000015e1                _timer_interrupt_handler
-                0x00000000000015f4                get_system_tick_count
-                0x00000000000015fe                sleep
+                0x0000000000001605                get_system_tick_count
+                0x000000000000160f                sleep
  *(.gnu.warning)
 
 .fini
@@ -440,44 +440,44 @@ LOAD build/./timer.o
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x1a15
+.debug_info     0x0000000000000000     0x1a3c
  *(.debug_info)
  .debug_info    0x0000000000000000      0x3c8 build/./block.o
  .debug_info    0x00000000000003c8      0x3e7 build/./dma.o
  .debug_info    0x00000000000007af      0xa15 build/./fdc.o
  .debug_info    0x00000000000011c4      0x106 build/./pic.o
  .debug_info    0x00000000000012ca      0x48b build/./serial.o
- .debug_info    0x0000000000001755      0x2c0 build/./timer.o
+ .debug_info    0x0000000000001755      0x2e7 build/./timer.o
 
-.debug_abbrev   0x0000000000000000      0x9eb
+.debug_abbrev   0x0000000000000000      0xa0f
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x191 build/./block.o
  .debug_abbrev  0x0000000000000191      0x123 build/./dma.o
  .debug_abbrev  0x00000000000002b4      0x362 build/./fdc.o
  .debug_abbrev  0x0000000000000616       0x81 build/./pic.o
  .debug_abbrev  0x0000000000000697      0x1ed build/./serial.o
- .debug_abbrev  0x0000000000000884      0x167 build/./timer.o
+ .debug_abbrev  0x0000000000000884      0x18b build/./timer.o
 
-.debug_line     0x0000000000000000     0x11a4
+.debug_line     0x0000000000000000     0x11a7
  *(.debug_line)
  .debug_line    0x0000000000000000      0x35d build/./block.o
  .debug_line    0x000000000000035d      0x3f6 build/./dma.o
  .debug_line    0x0000000000000753      0x4ca build/./fdc.o
  .debug_line    0x0000000000000c1d      0x14c build/./pic.o
  .debug_line    0x0000000000000d69      0x29e build/./serial.o
- .debug_line    0x0000000000001007      0x19d build/./timer.o
+ .debug_line    0x0000000000001007      0x1a0 build/./timer.o
 
 .debug_frame
  *(.debug_frame)
 
-.debug_str      0x0000000000000000    0x16c03
+.debug_str      0x0000000000000000    0x16c1a
  *(.debug_str)
  .debug_str     0x0000000000000000     0x34e0 build/./block.o
  .debug_str     0x00000000000034e0     0x3f09 build/./dma.o
  .debug_str     0x00000000000073e9     0x4e28 build/./fdc.o
  .debug_str     0x000000000000c211     0x32f6 build/./pic.o
  .debug_str     0x000000000000f507     0x41c5 build/./serial.o
- .debug_str     0x00000000000136cc     0x3537 build/./timer.o
+ .debug_str     0x00000000000136cc     0x354e build/./timer.o
 
 .debug_loc
  *(.debug_loc)

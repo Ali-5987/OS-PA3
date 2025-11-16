@@ -415,13 +415,13 @@ LOAD testmain.o
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x1b87
+.debug_info     0x0000000000000000     0x1ba1
  *(.debug_info)
  .debug_info    0x0000000000000000      0x6a6 proc/test_elf.o
- .debug_info    0x00000000000006a6      0xb2e proc/test_proc.o
- .debug_info    0x00000000000011d4      0x2b2 proc/test_timer.o
- .debug_info    0x0000000000001486      0x39b proc/test_tss.o
- .debug_info    0x0000000000001821      0x366 testmain.o
+ .debug_info    0x00000000000006a6      0xb48 proc/test_proc.o
+ .debug_info    0x00000000000011ee      0x2b2 proc/test_timer.o
+ .debug_info    0x00000000000014a0      0x39b proc/test_tss.o
+ .debug_info    0x000000000000183b      0x366 testmain.o
 
 .debug_abbrev   0x0000000000000000      0x7bb
  *(.debug_abbrev)
@@ -442,13 +442,13 @@ LOAD testmain.o
 .debug_frame
  *(.debug_frame)
 
-.debug_str      0x0000000000000000    0x11ee6
+.debug_str      0x0000000000000000    0x11f04
  *(.debug_str)
  .debug_str     0x0000000000000000     0x3a30 proc/test_elf.o
- .debug_str     0x0000000000003a30     0x49dd proc/test_proc.o
- .debug_str     0x000000000000840d     0x3275 proc/test_timer.o
- .debug_str     0x000000000000b682     0x2f22 proc/test_tss.o
- .debug_str     0x000000000000e5a4     0x3942 testmain.o
+ .debug_str     0x0000000000003a30     0x49fb proc/test_proc.o
+ .debug_str     0x000000000000842b     0x3275 proc/test_timer.o
+ .debug_str     0x000000000000b6a0     0x2f22 proc/test_tss.o
+ .debug_str     0x000000000000e5c2     0x3942 testmain.o
 
 .debug_loc
  *(.debug_loc)
@@ -483,13 +483,13 @@ LOAD testmain.o
 .debug_loclists
  *(.debug_loclists)
 
-.debug_macro    0x0000000000000000      0x2dc
+.debug_macro    0x0000000000000000      0x2e0
  *(.debug_macro)
  .debug_macro   0x0000000000000000       0x97 proc/test_elf.o
- .debug_macro   0x0000000000000097       0xfb proc/test_proc.o
- .debug_macro   0x0000000000000192       0x6c proc/test_timer.o
- .debug_macro   0x00000000000001fe       0x5e proc/test_tss.o
- .debug_macro   0x000000000000025c       0x80 testmain.o
+ .debug_macro   0x0000000000000097       0xff proc/test_proc.o
+ .debug_macro   0x0000000000000196       0x6c proc/test_timer.o
+ .debug_macro   0x0000000000000202       0x5e proc/test_tss.o
+ .debug_macro   0x0000000000000260       0x80 testmain.o
 
 .debug_names
  *(.debug_names)
@@ -546,8 +546,8 @@ OUTPUT(tests.o elf32-i386)
 .debug_macro    0x0000000000000000       0xee
  .debug_macro   0x0000000000000000       0xee proc/test_proc.o
 
-.debug_macro    0x0000000000000000       0x2e
- .debug_macro   0x0000000000000000       0x2e proc/test_proc.o
+.debug_macro    0x0000000000000000       0x34
+ .debug_macro   0x0000000000000000       0x34 proc/test_proc.o
 
 .debug_macro    0x0000000000000000      0x1e9
  .debug_macro   0x0000000000000000      0x1e9 proc/test_proc.o
