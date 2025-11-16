@@ -12,6 +12,9 @@
 #define PROCESS_PRI_MAX 10
 #define PROCESS_PRI_DEFAULT 5
 #define STATE_TERMINATED -1
+#define STATE_READY 1
+#define STATE_BLOCKED 0
+#define STATE_RUNNING 2
  typedef struct process process_t;
 typedef struct thread thread_t;
 

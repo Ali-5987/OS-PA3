@@ -8,6 +8,7 @@ Discarded input sections
  .group         0x0000000000000000        0xc build/./process.o
  .group         0x0000000000000000        0xc build/./process.o
  .group         0x0000000000000000        0xc build/./process.o
+ .group         0x0000000000000000        0xc build/./process.o
  .debug_macro   0x0000000000000000      0x844 build/./process.o
  .debug_macro   0x0000000000000000       0x16 build/./process.o
  .debug_macro   0x0000000000000000       0x16 build/./process.o
@@ -15,6 +16,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x76 build/./process.o
  .debug_macro   0x0000000000000000       0x8e build/./process.o
  .debug_macro   0x0000000000000000       0x3a build/./process.o
+ .debug_macro   0x0000000000000000       0x10 build/./process.o
  .group         0x0000000000000000        0xc build/./tss.o
  .group         0x0000000000000000        0xc build/./tss.o
  .group         0x0000000000000000        0xc build/./tss.o
@@ -119,33 +121,33 @@ LOAD build/./tss.o
 .plt.sec
  *(.plt.sec)
 
-.text           0x0000000000000000      0x5b3
+.text           0x0000000000000000      0x6da
  *(.text .stub)
  .text          0x0000000000000000      0x27d build/./elf.o
                 0x0000000000000000                elf_check_hdr
                 0x0000000000000074                elf_load_seg
                 0x000000000000016e                elf_load
- .text          0x000000000000027d      0x301 build/./process.o
+ .text          0x000000000000027d      0x428 build/./process.o
                 0x000000000000027d                process_create
-                0x00000000000002fb                process_destroy
-                0x000000000000038c                process_spawn
-                0x0000000000000408                process_fork
-                0x000000000000040e                process_find_by_pid
-                0x0000000000000414                process_exit
-                0x000000000000041a                _get_main_thread
-                0x0000000000000432                thread_create
-                0x000000000000054e                thread_destroy
-                0x0000000000000554                scheduler_init
-                0x000000000000055a                scheduler_tick
-                0x0000000000000560                scheduler_switch
-                0x0000000000000566                scheduler_post
-                0x000000000000056c                get_current_proc
-                0x0000000000000572                get_current_thread
-                0x0000000000000578                thread_exit
- .text          0x000000000000057e       0x35 build/./tss.o
-                0x000000000000057e                tss_flush
-                0x0000000000000598                tss_update_esp0
-                0x00000000000005a9                tss_get_global
+                0x00000000000002de                process_destroy
+                0x0000000000000379                process_spawn
+                0x00000000000003f5                process_fork
+                0x00000000000003fb                process_find_by_pid
+                0x0000000000000401                process_exit
+                0x0000000000000407                _get_main_thread
+                0x0000000000000444                thread_create
+                0x000000000000054c                thread_destroy
+                0x000000000000060d                scheduler_init
+                0x0000000000000679                scheduler_tick
+                0x000000000000067f                scheduler_switch
+                0x0000000000000685                scheduler_post
+                0x000000000000068b                get_current_proc
+                0x0000000000000695                get_current_thread
+                0x000000000000069f                thread_exit
+ .text          0x00000000000006a5       0x35 build/./tss.o
+                0x00000000000006a5                tss_flush
+                0x00000000000006bf                tss_update_esp0
+                0x00000000000006d0                tss_get_global
  *(.gnu.warning)
 
 .fini
@@ -215,11 +217,12 @@ LOAD build/./tss.o
 .data1
  *(.data1)
 
-.bss            0x0000000000000000       0x68
+.bss            0x0000000000000000       0x88
  *(.bss)
  .bss           0x0000000000000000        0x0 build/./elf.o
- .bss           0x0000000000000000        0x0 build/./process.o
- .bss           0x0000000000000000       0x68 build/./tss.o
+ .bss           0x0000000000000000        0x8 build/./process.o
+ *fill*         0x0000000000000008       0x18 
+ .bss           0x0000000000000020       0x68 build/./tss.o
 
 .stab
  *(.stab)
@@ -335,32 +338,32 @@ LOAD build/./tss.o
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x10fc
+.debug_info     0x0000000000000000     0x1093
  *(.debug_info)
  .debug_info    0x0000000000000000      0x739 build/./elf.o
- .debug_info    0x0000000000000739      0x74a build/./process.o
- .debug_info    0x0000000000000e83      0x279 build/./tss.o
+ .debug_info    0x0000000000000739      0x6e1 build/./process.o
+ .debug_info    0x0000000000000e1a      0x279 build/./tss.o
 
-.debug_abbrev   0x0000000000000000      0x532
+.debug_abbrev   0x0000000000000000      0x50a
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x1cb build/./elf.o
- .debug_abbrev  0x00000000000001cb      0x25b build/./process.o
- .debug_abbrev  0x0000000000000426      0x10c build/./tss.o
+ .debug_abbrev  0x00000000000001cb      0x233 build/./process.o
+ .debug_abbrev  0x00000000000003fe      0x10c build/./tss.o
 
-.debug_line     0x0000000000000000      0x881
+.debug_line     0x0000000000000000      0x90d
  *(.debug_line)
  .debug_line    0x0000000000000000      0x387 build/./elf.o
- .debug_line    0x0000000000000387      0x3eb build/./process.o
- .debug_line    0x0000000000000772      0x10f build/./tss.o
+ .debug_line    0x0000000000000387      0x477 build/./process.o
+ .debug_line    0x00000000000007fe      0x10f build/./tss.o
 
 .debug_frame
  *(.debug_frame)
 
-.debug_str      0x0000000000000000     0xa77e
+.debug_str      0x0000000000000000     0xa805
  *(.debug_str)
  .debug_str     0x0000000000000000     0x3c35 build/./elf.o
- .debug_str     0x0000000000003c35     0x3eff build/./process.o
- .debug_str     0x0000000000007b34     0x2c4a build/./tss.o
+ .debug_str     0x0000000000003c35     0x3f86 build/./process.o
+ .debug_str     0x0000000000007bbb     0x2c4a build/./tss.o
 
 .debug_loc
  *(.debug_loc)
@@ -395,11 +398,11 @@ LOAD build/./tss.o
 .debug_loclists
  *(.debug_loclists)
 
-.debug_macro    0x0000000000000000      0x19d
+.debug_macro    0x0000000000000000      0x1a6
  *(.debug_macro)
  .debug_macro   0x0000000000000000       0x8b build/./elf.o
- .debug_macro   0x000000000000008b       0xd6 build/./process.o
- .debug_macro   0x0000000000000161       0x3c build/./tss.o
+ .debug_macro   0x000000000000008b       0xdf build/./process.o
+ .debug_macro   0x000000000000016a       0x3c build/./tss.o
 
 .debug_names
  *(.debug_names)
@@ -459,8 +462,8 @@ OUTPUT(proc.o elf32-i386)
 .debug_macro    0x0000000000000000       0xee
  .debug_macro   0x0000000000000000       0xee build/./process.o
 
-.debug_macro    0x0000000000000000       0x1c
- .debug_macro   0x0000000000000000       0x1c build/./process.o
+.debug_macro    0x0000000000000000       0x2e
+ .debug_macro   0x0000000000000000       0x2e build/./process.o
 
 .debug_macro    0x0000000000000000       0x22
  .debug_macro   0x0000000000000000       0x22 build/./process.o

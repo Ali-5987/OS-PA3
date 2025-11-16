@@ -4,11 +4,14 @@
 #include <stdbool.h>
 #include <../include/proc/process.h>
 #include <../include/mm/vmm.h>
+#include <../include/mm/kheap.h>
 //#include <../include/mm/kheap.h>
 #define LOG_MOD_NAME 	"PRC"
 #define LOG_MOD_ENABLE  1
 
 #include <log.h>
+static process_t* current_proc = NULL;
+static thread_t* current_thread = NULL;
 static int current_pid=1;
 static int current_tid=1;
 void process_create(process_t* process, const char* name, int32_t priority)
@@ -16,7 +19,7 @@ void process_create(process_t* process, const char* name, int32_t priority)
     process->Pid = current_pid;
     current_pid++;
     process->dir = vmm_create_address_space();
-    memcpy(process->dir,vmm_get_kerneldir(),sizeof(pagedir_t));
+   // memcpy(process->dir,vmm_get_kerneldir(),sizeof(pagedir_t));
     process->priority = priority;
     strncpy(process->name, name,31);
     process->threads = NULL;
@@ -26,18 +29,19 @@ void process_create(process_t* process, const char* name, int32_t priority)
     return;
     process->state = STATE_TERMINATED;
     thread_t* this_thread = process->threads;
-    while (!this_thread)
+    while (this_thread)
     {
         thread_t* prev = this_thread;
-        thread_destroy(prev);
         this_thread = this_thread->next;
+        if (prev)
+        thread_destroy(prev);
     }
     if (process->dir)
     {
         vmm_free_region(process->dir, (void*)0x0, 0xC0000000);
-        kfree(process->dir);
+        free(process->dir);
     }
-    kfree(process);
+    free(process);
  }
  int32_t process_spawn(const char* filename)
  {
@@ -55,7 +59,11 @@ void process_create(process_t* process, const char* name, int32_t priority)
  void process_exit(process_t* process, int32_t status){}
 thread_t* _get_main_thread(process_t* process)
 {   if (!process)
-    return NULL;
+        return NULL;
+    if (!process->threads) {
+        process->threads = thread_create(process, NULL, NULL);
+    }
+    
     return process->threads;
 }
 thread_t* thread_create(process_t* parent_process, void* entry, void* arg)
@@ -89,15 +97,58 @@ thread_t* thread_create(process_t* parent_process, void* entry, void* arg)
     return thisthread;
 }
 int32_t thread_destroy(thread_t* thread)
-{
-    
+{   if (!thread)
+    return -1;
+    if (thread->state == STATE_RUNNING)
+    return -1;
+    if (!thread->parent || !thread->parent->threads)
+    return -1;
+    // if (thread->state == 1)
+    // {
+    //    queue[thread->priority]
+    // }
+    thread_t* current = thread->parent->threads;
+    if (current == thread)
+    thread->parent->threads = current->next;
+    else
+{    while (current != NULL && current->next != thread)
+    {
+            current = current->next;
+    }
+    if (current != NULL)
+    {
+        current->next = thread->next;
+    }}
+
+    free(thread->kernel);
+    free(thread);
+    return 0;
 }
-void scheduler_init(void){}
+void scheduler_init(void)
+{
+    process_t* kernel_process = malloc(sizeof(process_t));
+    thread_t* kernel_thread = malloc(sizeof(thread_t));
+    kernel_process->dir = vmm_get_kerneldir();
+    kernel_process->Pid =current_pid;
+    current_pid++;
+    kernel_thread->parent = kernel_process;
+    kernel_thread->state = STATE_RUNNING;
+    kernel_process->threads = kernel_thread;
+
+    current_proc = kernel_process;
+    current_thread = kernel_thread;
+}
 void scheduler_tick(interrupt_context_t* context){}
 void scheduler_switch(thread_t* next_thread){}
 void scheduler_post(thread_t* thread){}
-process_t* get_current_proc(void){}
-thread_t* get_current_thread(void){}
+process_t* get_current_proc(void)
+{
+    return current_proc;
+}
+thread_t* get_current_thread(void)
+{
+    return current_thread;
+}
 void thread_exit()
 {
     return;
