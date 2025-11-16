@@ -327,341 +327,341 @@ Linker script and memory map
                 0x00000000c0100100                . = (. + 0x100)
                 0x00000000c0100100                kcode_start = .
 
-.text           0x00000000c0100100     0x930f
+.text           0x00000000c0100100     0x93ba
  *(.text)
- .text          0x00000000c0100100      0xf63 init/init.o
+ .text          0x00000000c0100100      0xf9f init/init.o
                 0x00000000c0100100                create_gdt_entry
                 0x00000000c010017d                gdt_init_flat_protected
                 0x00000000c01002c5                get_gdt_ptr
                 0x00000000c01002cf                kmain
-                0x00000000c0100743                run_cmd
-                0x00000000c0100fd5                shell
-                0x00000000c010103e                load_gdt
-                0x00000000c010105b                load_idt
- .text          0x00000000c0101063     0x153c mm/mm.o
-                0x00000000c0101296                get_kernel_heap
-                0x00000000c01012a0                kheap_init
-                0x00000000c0101422                kheap_stats
-                0x00000000c0101594                kmalloc
-                0x00000000c01016e9                kfree
-                0x00000000c0101819                krealloc
-                0x00000000c01018e1                realloc
-                0x00000000c01018ff                malloc
-                0x00000000c0101914                free
-                0x00000000c0101a24                kmm_setup_memory_region
-                0x00000000c0101ab6                kmm_init
-                0x00000000c0101c6f                kmm_frame_alloc
-                0x00000000c0101d01                kmm_frame_free
-                0x00000000c0101d56                kmm_get_total_frames
-                0x00000000c0101d60                kmm_get_used_frames
-                0x00000000c0101e42                vmm_switch_pagedir
-                0x00000000c0101e79                vmm_init
-                0x00000000c0101f3b                vmm_create_address_space
-                0x00000000c0101f7b                vmm_create_pt
-                0x00000000c0101fe5                vmm_map_page
-                0x00000000c010205b                vmm_get_phys_frame
-                0x00000000c01020da                vmm_clone_pagetable
-                0x00000000c01021c2                vmm_clone_pagedir
-                0x00000000c01022e8                vmm_page_alloc
-                0x00000000c0102340                vmm_alloc_region
-                0x00000000c010240b                vmm_free_region
-                0x00000000c0102536                vmm_page_free
-                0x00000000c010257b                vmm_get_kerneldir
-                0x00000000c0102585                vmm_get_current_pagedir
- .text          0x00000000c010259f     0x1637 driver/driver.o
-                0x00000000c010259f                blkdev_register
-                0x00000000c0102825                blkdev_get_by_name
-                0x00000000c0102915                blkread
-                0x00000000c0102a09                dma_set_address
-                0x00000000c0102ae8                dma_set_count
-                0x00000000c0102bc7                dma_set_external_pagereg
-                0x00000000c0102c7e                dma_set_mode
-                0x00000000c0102d3b                dma_setup_read
-                0x00000000c0102d5c                dma_setup_write
-                0x00000000c0102d7d                dma_mask_channel
-                0x00000000c0102e16                dma_unmask_channel
-                0x00000000c0102ea9                dma_unmask_all
-                0x00000000c0102ebb                dma_reset_flipflop
-                0x00000000c0102eea                dma_reset
-                0x00000000c0102f19                dma_disable
-                0x00000000c01034a8                fdc_init
-                0x00000000c010350a                fdc_reset
-                0x00000000c0103578                fdc_read_sector
-                0x00000000c0103635                fdc_lba_to_chs
-                0x00000000c01036e4                fdc_set_drive
-                0x00000000c0103704                fdc_get_drive
-                0x00000000c010372f                pic_init
-                0x00000000c01037d1                pic_send_eoi
-                0x00000000c010383d                serial_init
-                0x00000000c0103922                serial_putc
-                0x00000000c010395e                serial_puts
-                0x00000000c010399d                serial_getc
-                0x00000000c0103b1c                init_system_timer
-                0x00000000c0103b80                _timer_interrupt_handler
-                0x00000000c0103b93                get_system_tick_count
-                0x00000000c0103b9d                sleep
- .text          0x00000000c0103bd6      0x6da proc/proc.o
-                0x00000000c0103bd6                elf_check_hdr
-                0x00000000c0103c4a                elf_load_seg
-                0x00000000c0103d44                elf_load
-                0x00000000c0103e53                process_create
-                0x00000000c0103eb4                process_destroy
-                0x00000000c0103f4f                process_spawn
-                0x00000000c0103fcb                process_fork
-                0x00000000c0103fd1                process_find_by_pid
-                0x00000000c0103fd7                process_exit
-                0x00000000c0103fdd                _get_main_thread
-                0x00000000c010401a                thread_create
-                0x00000000c0104122                thread_destroy
-                0x00000000c01041e3                scheduler_init
-                0x00000000c010424f                scheduler_tick
-                0x00000000c0104255                scheduler_switch
-                0x00000000c010425b                scheduler_post
-                0x00000000c0104261                get_current_proc
-                0x00000000c010426b                get_current_thread
-                0x00000000c0104275                thread_exit
-                0x00000000c010427b                tss_flush
-                0x00000000c0104295                tss_update_esp0
-                0x00000000c01042a6                tss_get_global
- .text          0x00000000c01042b0      0xe33 fs/fs.o
-                0x00000000c0104700                fat12_mount
-                0x00000000c0104a24                fat12_unmount
-                0x00000000c0104ae4                fat12_open
-                0x00000000c0104b41                fat12_read
-                0x00000000c0104d9b                fat12_close
-                0x00000000c0104da5                fat12_write
-                0x00000000c0104daf                fat12_readdir
-                0x00000000c0104e51                vfs_init
-                0x00000000c0104e95                vfs_mount
-                0x00000000c0104f87                vfs_open
-                0x00000000c0105079                vfs_read
- .text          0x00000000c01050e3     0x1995 objs/impl.o
-                0x00000000c0105131                idt_init
-                0x00000000c0105658                get_idt_ptr
-                0x00000000c0105689                setup_x86_interrutps
-                0x00000000c01056be                register_interrupt_handler
-                0x00000000c01056db                unregister_interrupt_handler
-                0x00000000c01056f9                get_interrupt_handler
-                0x00000000c0105712                interrupt_dispatch
-                0x00000000c0105761                isr0
-                0x00000000c010576a                isr1
-                0x00000000c0105773                isr2
-                0x00000000c010577c                isr3
-                0x00000000c0105785                isr4
-                0x00000000c010578e                isr5
-                0x00000000c0105797                isr6
-                0x00000000c01057a0                isr7
-                0x00000000c01057a9                isr8
-                0x00000000c01057b0                isr9
-                0x00000000c01057b9                isr10
-                0x00000000c01057c0                isr11
-                0x00000000c01057c7                isr12
-                0x00000000c01057ce                isr13
-                0x00000000c01057d5                isr14
-                0x00000000c01057dc                isr15
-                0x00000000c01057e5                isr16
-                0x00000000c01057ee                isr17
-                0x00000000c01057f5                isr18
-                0x00000000c01057fe                isr19
-                0x00000000c0105807                isr20
-                0x00000000c0105810                isr21
-                0x00000000c0105817                isr22
-                0x00000000c0105820                isr23
-                0x00000000c0105829                isr24
-                0x00000000c0105832                isr25
-                0x00000000c010583b                isr26
-                0x00000000c0105844                isr27
-                0x00000000c010584d                isr28
-                0x00000000c0105853                isr29
-                0x00000000c0105859                isr30
-                0x00000000c010585f                isr31
-                0x00000000c0105865                isr32
-                0x00000000c010586b                isr33
-                0x00000000c0105871                isr34
-                0x00000000c0105877                isr35
-                0x00000000c010587d                isr36
-                0x00000000c0105883                isr37
-                0x00000000c0105889                isr38
-                0x00000000c010588f                isr39
-                0x00000000c0105895                isr40
-                0x00000000c010589b                isr41
-                0x00000000c01058a1                isr42
-                0x00000000c01058a7                isr43
-                0x00000000c01058ad                isr44
-                0x00000000c01058b3                isr45
-                0x00000000c01058b9                isr46
-                0x00000000c01058bf                isr47
-                0x00000000c01058c5                isr128
-                0x00000000c0105e1d                kbd_init
-                0x00000000c0105ebd                kbd_get_lastscancode
-                0x00000000c0105ec9                kbd_get_lastkey
-                0x00000000c0105ef1                kbd_getlastkey_buf
-                0x00000000c0105f04                kbd_clear_lastkey
-                0x00000000c0105f11                kbd_keycode_to_ascii
-                0x00000000c0106044                kbd_get_numlock
-                0x00000000c0106050                kbd_get_capslock
-                0x00000000c010605c                kbd_get_scrolllock
-                0x00000000c0106068                kbd_get_shift
-                0x00000000c0106074                kbd_get_ctrl
-                0x00000000c0106080                kbd_get_alt
-                0x00000000c010608c                kbd_ignore_resend
-                0x00000000c0106099                kbd_should_resend
-                0x00000000c01060a5                kbd_set_leds
-                0x00000000c0106129                kbd_self_test
-                0x00000000c0106155                kbd_bat_result
-                0x00000000c0106161                kbd_diag_result
-                0x00000000c010616d                kbd_is_enabled
-                0x00000000c0106179                kbd_setstate
-                0x00000000c0106236                syscall_init
-                0x00000000c01062fb                tty_init
-                0x00000000c010630e                terminal_getc
-                0x00000000c0106336                terminal_read
-                0x00000000c010639b                terminal_stdin_init
-                0x00000000c01063a9                terminal_move_cursor
-                0x00000000c010640b                terminal_clear_scr
-                0x00000000c01064b1                terminal_clear_log
-                0x00000000c0106557                terminal_setcolor
-                0x00000000c010656f                terminal_get_colour
-                0x00000000c010657b                terminal_settext_color
-                0x00000000c01065b3                terminal_setbg_color
-                0x00000000c01065eb                terminal_reset_color
-                0x00000000c0106612                terminal_stdout_init
-                0x00000000c0106655                terminal_putc
-                0x00000000c01068c9                terminal_write
-                0x00000000c0106910                terminal_writestring
-                0x00000000c0106955                vga_entry_color
-                0x00000000c0106967                vga_entry
-                0x00000000c0106988                vga_move_cursor_to
-                0x00000000c0106a11                vga_putentry_at
-                0x00000000c0106a6e                vga_get_screen_buffer
- .text          0x00000000c0106a78     0x197b tests/tests.o
-                0x00000000c0106a78                test_elf_check_valid_header
-                0x00000000c0106b01                test_elf_load_program
-                0x00000000c0106c11                test_elf_load_nonexistent
-                0x00000000c0106c90                test_process_create_nonnull
-                0x00000000c0106d19                test_process_create_different_priorities
-                0x00000000c0106e42                test_process_name_handling
-                0x00000000c0106f25                test_get_main_thread_nonnull
-                0x00000000c0106fac                test_thread_creation
-                0x00000000c0107043                test_multiple_thread_creation
-                0x00000000c01071b0                test_scheduler_get_current_thread
-                0x00000000c01071e8                test_scheduler_get_current_proc
-                0x00000000c010722f                test_scheduler_post_thread
-                0x00000000c01072f8                test_multiple_process_creation
-                0x00000000c0107436                test_thread_destroy_safe
-                0x00000000c01074ee                test_scheduler_init_idempotent
-                0x00000000c010754b                test_process_exit_safe
-                0x00000000c01075f3                test_concurrent_scheduler_ops
-                0x00000000c0107755                test_many_threads_creation
-                0x00000000c01079f6                thread_test
-                0x00000000c0107aff                test_tick_count_incrementing
-                0x00000000c0107c5f                test_sleep_duration
-                0x00000000c0107d37                test_multiple_sleeps
-                0x00000000c0107f4d                test_tss_global_access
-                0x00000000c010801b                test_tss_esp0_update
-                0x00000000c010822e                utoa
-                0x00000000c01082e0                start_tests
-                0x00000000c0108364                read_command
-                0x00000000c01083cf                send_msg
- .text          0x00000000c01083f3      0x5e7 libc/libk.a(string.o)
-                0x00000000c01083f3                strlen
-                0x00000000c010841a                memset
-                0x00000000c010844d                strcmp
-                0x00000000c010848c                memcpy
-                0x00000000c01084cd                memcmp
-                0x00000000c0108535                strcpy
-                0x00000000c010856f                strncpy
-                0x00000000c01085cc                strchr
-                0x00000000c01085f8                strtok
-                0x00000000c01086aa                strtol
-                0x00000000c0108872                strtok_r
-                0x00000000c0108990                strcat
- .text          0x00000000c01089da       0x79 libc/libk.a(stdio.o)
-                0x00000000c01089da                printk
-                0x00000000c0108a1e                getlinek
- .text          0x00000000c0108a53      0x9bc libc/libk.a(vsprintf.o)
-                0x00000000c0108f63                vsnprintf
-                0x00000000c010940f                kcode_end = .
-                0x00000000c010940f                krodata_start = .
+                0x00000000c010077f                run_cmd
+                0x00000000c0101011                shell
+                0x00000000c010107a                load_gdt
+                0x00000000c0101097                load_idt
+ .text          0x00000000c010109f     0x153c mm/mm.o
+                0x00000000c01012d2                get_kernel_heap
+                0x00000000c01012dc                kheap_init
+                0x00000000c010145e                kheap_stats
+                0x00000000c01015d0                kmalloc
+                0x00000000c0101725                kfree
+                0x00000000c0101855                krealloc
+                0x00000000c010191d                realloc
+                0x00000000c010193b                malloc
+                0x00000000c0101950                free
+                0x00000000c0101a60                kmm_setup_memory_region
+                0x00000000c0101af2                kmm_init
+                0x00000000c0101cab                kmm_frame_alloc
+                0x00000000c0101d3d                kmm_frame_free
+                0x00000000c0101d92                kmm_get_total_frames
+                0x00000000c0101d9c                kmm_get_used_frames
+                0x00000000c0101e7e                vmm_switch_pagedir
+                0x00000000c0101eb5                vmm_init
+                0x00000000c0101f77                vmm_create_address_space
+                0x00000000c0101fb7                vmm_create_pt
+                0x00000000c0102021                vmm_map_page
+                0x00000000c0102097                vmm_get_phys_frame
+                0x00000000c0102116                vmm_clone_pagetable
+                0x00000000c01021fe                vmm_clone_pagedir
+                0x00000000c0102324                vmm_page_alloc
+                0x00000000c010237c                vmm_alloc_region
+                0x00000000c0102447                vmm_free_region
+                0x00000000c0102572                vmm_page_free
+                0x00000000c01025b7                vmm_get_kerneldir
+                0x00000000c01025c1                vmm_get_current_pagedir
+ .text          0x00000000c01025db     0x1637 driver/driver.o
+                0x00000000c01025db                blkdev_register
+                0x00000000c0102861                blkdev_get_by_name
+                0x00000000c0102951                blkread
+                0x00000000c0102a45                dma_set_address
+                0x00000000c0102b24                dma_set_count
+                0x00000000c0102c03                dma_set_external_pagereg
+                0x00000000c0102cba                dma_set_mode
+                0x00000000c0102d77                dma_setup_read
+                0x00000000c0102d98                dma_setup_write
+                0x00000000c0102db9                dma_mask_channel
+                0x00000000c0102e52                dma_unmask_channel
+                0x00000000c0102ee5                dma_unmask_all
+                0x00000000c0102ef7                dma_reset_flipflop
+                0x00000000c0102f26                dma_reset
+                0x00000000c0102f55                dma_disable
+                0x00000000c01034e4                fdc_init
+                0x00000000c0103546                fdc_reset
+                0x00000000c01035b4                fdc_read_sector
+                0x00000000c0103671                fdc_lba_to_chs
+                0x00000000c0103720                fdc_set_drive
+                0x00000000c0103740                fdc_get_drive
+                0x00000000c010376b                pic_init
+                0x00000000c010380d                pic_send_eoi
+                0x00000000c0103879                serial_init
+                0x00000000c010395e                serial_putc
+                0x00000000c010399a                serial_puts
+                0x00000000c01039d9                serial_getc
+                0x00000000c0103b58                init_system_timer
+                0x00000000c0103bbc                _timer_interrupt_handler
+                0x00000000c0103bcf                get_system_tick_count
+                0x00000000c0103bd9                sleep
+ .text          0x00000000c0103c12      0x749 proc/proc.o
+                0x00000000c0103c12                elf_check_hdr
+                0x00000000c0103c86                elf_load_seg
+                0x00000000c0103d80                elf_load
+                0x00000000c0103e8f                process_create
+                0x00000000c0103ef0                process_destroy
+                0x00000000c0103f8b                process_spawn
+                0x00000000c0104007                process_fork
+                0x00000000c010400d                process_find_by_pid
+                0x00000000c0104013                process_exit
+                0x00000000c0104019                _get_main_thread
+                0x00000000c0104056                thread_create
+                0x00000000c010415e                thread_destroy
+                0x00000000c010421f                scheduler_init
+                0x00000000c01042fa                scheduler_tick
+                0x00000000c0104300                scheduler_switch
+                0x00000000c0104306                scheduler_post
+                0x00000000c010430c                get_current_proc
+                0x00000000c0104316                get_current_thread
+                0x00000000c0104320                thread_exit
+                0x00000000c0104326                tss_flush
+                0x00000000c0104340                tss_update_esp0
+                0x00000000c0104351                tss_get_global
+ .text          0x00000000c010435b      0xe33 fs/fs.o
+                0x00000000c01047ab                fat12_mount
+                0x00000000c0104acf                fat12_unmount
+                0x00000000c0104b8f                fat12_open
+                0x00000000c0104bec                fat12_read
+                0x00000000c0104e46                fat12_close
+                0x00000000c0104e50                fat12_write
+                0x00000000c0104e5a                fat12_readdir
+                0x00000000c0104efc                vfs_init
+                0x00000000c0104f40                vfs_mount
+                0x00000000c0105032                vfs_open
+                0x00000000c0105124                vfs_read
+ .text          0x00000000c010518e     0x1995 objs/impl.o
+                0x00000000c01051dc                idt_init
+                0x00000000c0105703                get_idt_ptr
+                0x00000000c0105734                setup_x86_interrutps
+                0x00000000c0105769                register_interrupt_handler
+                0x00000000c0105786                unregister_interrupt_handler
+                0x00000000c01057a4                get_interrupt_handler
+                0x00000000c01057bd                interrupt_dispatch
+                0x00000000c010580c                isr0
+                0x00000000c0105815                isr1
+                0x00000000c010581e                isr2
+                0x00000000c0105827                isr3
+                0x00000000c0105830                isr4
+                0x00000000c0105839                isr5
+                0x00000000c0105842                isr6
+                0x00000000c010584b                isr7
+                0x00000000c0105854                isr8
+                0x00000000c010585b                isr9
+                0x00000000c0105864                isr10
+                0x00000000c010586b                isr11
+                0x00000000c0105872                isr12
+                0x00000000c0105879                isr13
+                0x00000000c0105880                isr14
+                0x00000000c0105887                isr15
+                0x00000000c0105890                isr16
+                0x00000000c0105899                isr17
+                0x00000000c01058a0                isr18
+                0x00000000c01058a9                isr19
+                0x00000000c01058b2                isr20
+                0x00000000c01058bb                isr21
+                0x00000000c01058c2                isr22
+                0x00000000c01058cb                isr23
+                0x00000000c01058d4                isr24
+                0x00000000c01058dd                isr25
+                0x00000000c01058e6                isr26
+                0x00000000c01058ef                isr27
+                0x00000000c01058f8                isr28
+                0x00000000c01058fe                isr29
+                0x00000000c0105904                isr30
+                0x00000000c010590a                isr31
+                0x00000000c0105910                isr32
+                0x00000000c0105916                isr33
+                0x00000000c010591c                isr34
+                0x00000000c0105922                isr35
+                0x00000000c0105928                isr36
+                0x00000000c010592e                isr37
+                0x00000000c0105934                isr38
+                0x00000000c010593a                isr39
+                0x00000000c0105940                isr40
+                0x00000000c0105946                isr41
+                0x00000000c010594c                isr42
+                0x00000000c0105952                isr43
+                0x00000000c0105958                isr44
+                0x00000000c010595e                isr45
+                0x00000000c0105964                isr46
+                0x00000000c010596a                isr47
+                0x00000000c0105970                isr128
+                0x00000000c0105ec8                kbd_init
+                0x00000000c0105f68                kbd_get_lastscancode
+                0x00000000c0105f74                kbd_get_lastkey
+                0x00000000c0105f9c                kbd_getlastkey_buf
+                0x00000000c0105faf                kbd_clear_lastkey
+                0x00000000c0105fbc                kbd_keycode_to_ascii
+                0x00000000c01060ef                kbd_get_numlock
+                0x00000000c01060fb                kbd_get_capslock
+                0x00000000c0106107                kbd_get_scrolllock
+                0x00000000c0106113                kbd_get_shift
+                0x00000000c010611f                kbd_get_ctrl
+                0x00000000c010612b                kbd_get_alt
+                0x00000000c0106137                kbd_ignore_resend
+                0x00000000c0106144                kbd_should_resend
+                0x00000000c0106150                kbd_set_leds
+                0x00000000c01061d4                kbd_self_test
+                0x00000000c0106200                kbd_bat_result
+                0x00000000c010620c                kbd_diag_result
+                0x00000000c0106218                kbd_is_enabled
+                0x00000000c0106224                kbd_setstate
+                0x00000000c01062e1                syscall_init
+                0x00000000c01063a6                tty_init
+                0x00000000c01063b9                terminal_getc
+                0x00000000c01063e1                terminal_read
+                0x00000000c0106446                terminal_stdin_init
+                0x00000000c0106454                terminal_move_cursor
+                0x00000000c01064b6                terminal_clear_scr
+                0x00000000c010655c                terminal_clear_log
+                0x00000000c0106602                terminal_setcolor
+                0x00000000c010661a                terminal_get_colour
+                0x00000000c0106626                terminal_settext_color
+                0x00000000c010665e                terminal_setbg_color
+                0x00000000c0106696                terminal_reset_color
+                0x00000000c01066bd                terminal_stdout_init
+                0x00000000c0106700                terminal_putc
+                0x00000000c0106974                terminal_write
+                0x00000000c01069bb                terminal_writestring
+                0x00000000c0106a00                vga_entry_color
+                0x00000000c0106a12                vga_entry
+                0x00000000c0106a33                vga_move_cursor_to
+                0x00000000c0106abc                vga_putentry_at
+                0x00000000c0106b19                vga_get_screen_buffer
+ .text          0x00000000c0106b23     0x197b tests/tests.o
+                0x00000000c0106b23                test_elf_check_valid_header
+                0x00000000c0106bac                test_elf_load_program
+                0x00000000c0106cbc                test_elf_load_nonexistent
+                0x00000000c0106d3b                test_process_create_nonnull
+                0x00000000c0106dc4                test_process_create_different_priorities
+                0x00000000c0106eed                test_process_name_handling
+                0x00000000c0106fd0                test_get_main_thread_nonnull
+                0x00000000c0107057                test_thread_creation
+                0x00000000c01070ee                test_multiple_thread_creation
+                0x00000000c010725b                test_scheduler_get_current_thread
+                0x00000000c0107293                test_scheduler_get_current_proc
+                0x00000000c01072da                test_scheduler_post_thread
+                0x00000000c01073a3                test_multiple_process_creation
+                0x00000000c01074e1                test_thread_destroy_safe
+                0x00000000c0107599                test_scheduler_init_idempotent
+                0x00000000c01075f6                test_process_exit_safe
+                0x00000000c010769e                test_concurrent_scheduler_ops
+                0x00000000c0107800                test_many_threads_creation
+                0x00000000c0107aa1                thread_test
+                0x00000000c0107baa                test_tick_count_incrementing
+                0x00000000c0107d0a                test_sleep_duration
+                0x00000000c0107de2                test_multiple_sleeps
+                0x00000000c0107ff8                test_tss_global_access
+                0x00000000c01080c6                test_tss_esp0_update
+                0x00000000c01082d9                utoa
+                0x00000000c010838b                start_tests
+                0x00000000c010840f                read_command
+                0x00000000c010847a                send_msg
+ .text          0x00000000c010849e      0x5e7 libc/libk.a(string.o)
+                0x00000000c010849e                strlen
+                0x00000000c01084c5                memset
+                0x00000000c01084f8                strcmp
+                0x00000000c0108537                memcpy
+                0x00000000c0108578                memcmp
+                0x00000000c01085e0                strcpy
+                0x00000000c010861a                strncpy
+                0x00000000c0108677                strchr
+                0x00000000c01086a3                strtok
+                0x00000000c0108755                strtol
+                0x00000000c010891d                strtok_r
+                0x00000000c0108a3b                strcat
+ .text          0x00000000c0108a85       0x79 libc/libk.a(stdio.o)
+                0x00000000c0108a85                printk
+                0x00000000c0108ac9                getlinek
+ .text          0x00000000c0108afe      0x9bc libc/libk.a(vsprintf.o)
+                0x00000000c010900e                vsnprintf
+                0x00000000c01094ba                kcode_end = .
+                0x00000000c01094ba                krodata_start = .
 
-.iplt           0x00000000c010940f        0x0
- .iplt          0x00000000c010940f        0x0 init/init.o
+.iplt           0x00000000c01094ba        0x0
+ .iplt          0x00000000c01094ba        0x0 init/init.o
 
-.rodata         0x00000000c0109420     0x1ea8
+.rodata         0x00000000c01094c0     0x1ec8
  *(.rodata)
- .rodata        0x00000000c0109420      0x6ef init/init.o
- *fill*         0x00000000c0109b0f        0x1 
- .rodata        0x00000000c0109b10       0xbc mm/mm.o
- .rodata        0x00000000c0109bcc      0x3d2 driver/driver.o
- .rodata        0x00000000c0109f9e        0xa fs/fs.o
- *fill*         0x00000000c0109fa8       0x18 
- .rodata        0x00000000c0109fc0      0x393 objs/impl.o
- *fill*         0x00000000c010a353        0x1 
- .rodata        0x00000000c010a354      0xea0 tests/tests.o
- .rodata        0x00000000c010b1f4       0xd4 libc/libk.a(vsprintf.o)
+ .rodata        0x00000000c01094c0      0x70b init/init.o
+ *fill*         0x00000000c0109bcb        0x1 
+ .rodata        0x00000000c0109bcc       0xbc mm/mm.o
+ .rodata        0x00000000c0109c88      0x3d2 driver/driver.o
+ .rodata        0x00000000c010a05a        0xa fs/fs.o
+ *fill*         0x00000000c010a064       0x1c 
+ .rodata        0x00000000c010a080      0x393 objs/impl.o
+ *fill*         0x00000000c010a413        0x1 
+ .rodata        0x00000000c010a414      0xea0 tests/tests.o
+ .rodata        0x00000000c010b2b4       0xd4 libc/libk.a(vsprintf.o)
  *(.rodata.*)
-                0x00000000c010b2c8                krodata_end = .
-                0x00000000c010b2c8                kdata_start = .
+                0x00000000c010b388                krodata_end = .
+                0x00000000c010b388                kdata_start = .
 
-.rel.dyn        0x00000000c010b2c8        0x0
- .rel.got       0x00000000c010b2c8        0x0 init/init.o
- .rel.iplt      0x00000000c010b2c8        0x0 init/init.o
- .rel.text      0x00000000c010b2c8        0x0 init/init.o
+.rel.dyn        0x00000000c010b388        0x0
+ .rel.got       0x00000000c010b388        0x0 init/init.o
+ .rel.iplt      0x00000000c010b388        0x0 init/init.o
+ .rel.text      0x00000000c010b388        0x0 init/init.o
 
-.data           0x00000000c010b2e0      0x128
+.data           0x00000000c010b3a0      0x128
  *(.data)
- .data          0x00000000c010b2e0        0x0 init/init.o
- .data          0x00000000c010b2e0        0x0 mm/mm.o
- .data          0x00000000c010b2e0        0x4 driver/driver.o
- .data          0x00000000c010b2e4        0xc proc/proc.o
-                0x00000000c010b2ec                global_tss
- .data          0x00000000c010b2f0       0x28 fs/fs.o
-                0x00000000c010b2f0                fat12_fs_type
-                0x00000000c010b310                fs_types
- .data          0x00000000c010b318       0x18 objs/impl.o
- *fill*         0x00000000c010b330       0x10 
- .data          0x00000000c010b340       0xc8 tests/tests.o
- .data          0x00000000c010b408        0x0 libc/libk.a(string.o)
- .data          0x00000000c010b408        0x0 libc/libk.a(stdio.o)
- .data          0x00000000c010b408        0x0 libc/libk.a(vsprintf.o)
-                0x00000000c010b408                kdata_end = .
-                0x00000000c010b408                kbss_start = .
+ .data          0x00000000c010b3a0        0x0 init/init.o
+ .data          0x00000000c010b3a0        0x0 mm/mm.o
+ .data          0x00000000c010b3a0        0x4 driver/driver.o
+ .data          0x00000000c010b3a4        0xc proc/proc.o
+                0x00000000c010b3ac                global_tss
+ .data          0x00000000c010b3b0       0x28 fs/fs.o
+                0x00000000c010b3b0                fat12_fs_type
+                0x00000000c010b3d0                fs_types
+ .data          0x00000000c010b3d8       0x18 objs/impl.o
+ *fill*         0x00000000c010b3f0       0x10 
+ .data          0x00000000c010b400       0xc8 tests/tests.o
+ .data          0x00000000c010b4c8        0x0 libc/libk.a(string.o)
+ .data          0x00000000c010b4c8        0x0 libc/libk.a(stdio.o)
+ .data          0x00000000c010b4c8        0x0 libc/libk.a(vsprintf.o)
+                0x00000000c010b4c8                kdata_end = .
+                0x00000000c010b4c8                kbss_start = .
 
-.got            0x00000000c010b408        0x0
- .got           0x00000000c010b408        0x0 init/init.o
+.got            0x00000000c010b4c8        0x0
+ .got           0x00000000c010b4c8        0x0 init/init.o
 
-.got.plt        0x00000000c010b408        0x0
- .got.plt       0x00000000c010b408        0x0 init/init.o
+.got.plt        0x00000000c010b4c8        0x0
+ .got.plt       0x00000000c010b4c8        0x0 init/init.o
 
-.igot.plt       0x00000000c010b408        0x0
- .igot.plt      0x00000000c010b408        0x0 init/init.o
+.igot.plt       0x00000000c010b4c8        0x0
+ .igot.plt      0x00000000c010b4c8        0x0 init/init.o
 
-.bss            0x00000000c010b420      0xfe4
+.bss            0x00000000c010b4e0     0x1024
  *(.bss)
- .bss           0x00000000c010b420       0x36 init/init.o
- *fill*         0x00000000c010b456        0xa 
- .bss           0x00000000c010b460       0xd4 mm/mm.o
-                0x00000000c010b460                kernel_heap
- .bss           0x00000000c010b534       0x20 driver/driver.o
-                0x00000000c010b54c                ticks
-                0x00000000c010b550                freq
- *fill*         0x00000000c010b554        0xc 
- .bss           0x00000000c010b560       0x88 proc/proc.o
- .bss           0x00000000c010b5e8        0xc fs/fs.o
- *fill*         0x00000000c010b5f4        0xc 
- .bss           0x00000000c010b600      0xd58 objs/impl.o
-                0x00000000c010b600                idt
-                0x00000000c010be00                idt_ptr
- *fill*         0x00000000c010c358        0x8 
- .bss           0x00000000c010c360       0xa0 tests/tests.o
- .bss           0x00000000c010c400        0x4 libc/libk.a(string.o)
- .bss           0x00000000c010c404        0x0 libc/libk.a(stdio.o)
- .bss           0x00000000c010c404        0x0 libc/libk.a(vsprintf.o)
-                0x00000000c010c404                kbss_end = .
+ .bss           0x00000000c010b4e0       0x36 init/init.o
+ *fill*         0x00000000c010b516        0xa 
+ .bss           0x00000000c010b520       0xd4 mm/mm.o
+                0x00000000c010b520                kernel_heap
+ .bss           0x00000000c010b5f4       0x20 driver/driver.o
+                0x00000000c010b60c                ticks
+                0x00000000c010b610                freq
+ *fill*         0x00000000c010b614        0xc 
+ .bss           0x00000000c010b620       0xc8 proc/proc.o
+ .bss           0x00000000c010b6e8        0xc fs/fs.o
+ *fill*         0x00000000c010b6f4        0xc 
+ .bss           0x00000000c010b700      0xd58 objs/impl.o
+                0x00000000c010b700                idt
+                0x00000000c010bf00                idt_ptr
+ *fill*         0x00000000c010c458        0x8 
+ .bss           0x00000000c010c460       0xa0 tests/tests.o
+ .bss           0x00000000c010c500        0x4 libc/libk.a(string.o)
+ .bss           0x00000000c010c504        0x0 libc/libk.a(stdio.o)
+ .bss           0x00000000c010c504        0x0 libc/libk.a(vsprintf.o)
+                0x00000000c010c504                kbss_end = .
 
 /DISCARD/
  *(.eh_frame .note.GNU-stack)
-                0x00000000c010c404                kernel_end = .
+                0x00000000c010c504                kernel_end = .
 LOAD init/init.o
 LOAD mm/mm.o
 LOAD driver/driver.o
@@ -707,62 +707,62 @@ OUTPUT(kernel.elf elf32-i386)
  .debug_aranges
                 0x0000000000000400       0x20 libc/libk.a(vsprintf.o)
 
-.debug_info     0x0000000000000000     0xb16c
- .debug_info    0x0000000000000000      0xe0f init/init.o
- .debug_info    0x0000000000000e0f     0x1974 mm/mm.o
- .debug_info    0x0000000000002783     0x1a15 driver/driver.o
- .debug_info    0x0000000000004198     0x1093 proc/proc.o
- .debug_info    0x000000000000522b     0x1614 fs/fs.o
- .debug_info    0x000000000000683f     0x2227 objs/impl.o
- .debug_info    0x0000000000008a66     0x1b87 tests/tests.o
- .debug_info    0x000000000000a5ed      0x53b libc/libk.a(string.o)
- .debug_info    0x000000000000ab28      0x195 libc/libk.a(stdio.o)
- .debug_info    0x000000000000acbd      0x4af libc/libk.a(vsprintf.o)
+.debug_info     0x0000000000000000     0xb1c6
+ .debug_info    0x0000000000000000      0xe30 init/init.o
+ .debug_info    0x0000000000000e30     0x1974 mm/mm.o
+ .debug_info    0x00000000000027a4     0x1a15 driver/driver.o
+ .debug_info    0x00000000000041b9     0x10cc proc/proc.o
+ .debug_info    0x0000000000005285     0x1614 fs/fs.o
+ .debug_info    0x0000000000006899     0x2227 objs/impl.o
+ .debug_info    0x0000000000008ac0     0x1b87 tests/tests.o
+ .debug_info    0x000000000000a647      0x53b libc/libk.a(string.o)
+ .debug_info    0x000000000000ab82      0x195 libc/libk.a(stdio.o)
+ .debug_info    0x000000000000ad17      0x4af libc/libk.a(vsprintf.o)
 
-.debug_abbrev   0x0000000000000000     0x35ca
- .debug_abbrev  0x0000000000000000      0x4b3 init/init.o
- .debug_abbrev  0x00000000000004b3      0x772 mm/mm.o
- .debug_abbrev  0x0000000000000c25      0x9eb driver/driver.o
- .debug_abbrev  0x0000000000001610      0x50a proc/proc.o
- .debug_abbrev  0x0000000000001b1a      0x489 fs/fs.o
- .debug_abbrev  0x0000000000001fa3      0xacd objs/impl.o
- .debug_abbrev  0x0000000000002a70      0x7bb tests/tests.o
- .debug_abbrev  0x000000000000322b      0x15e libc/libk.a(string.o)
- .debug_abbrev  0x0000000000003389      0x101 libc/libk.a(stdio.o)
- .debug_abbrev  0x000000000000348a      0x140 libc/libk.a(vsprintf.o)
+.debug_abbrev   0x0000000000000000     0x3603
+ .debug_abbrev  0x0000000000000000      0x4db init/init.o
+ .debug_abbrev  0x00000000000004db      0x772 mm/mm.o
+ .debug_abbrev  0x0000000000000c4d      0x9eb driver/driver.o
+ .debug_abbrev  0x0000000000001638      0x51b proc/proc.o
+ .debug_abbrev  0x0000000000001b53      0x489 fs/fs.o
+ .debug_abbrev  0x0000000000001fdc      0xacd objs/impl.o
+ .debug_abbrev  0x0000000000002aa9      0x7bb tests/tests.o
+ .debug_abbrev  0x0000000000003264      0x15e libc/libk.a(string.o)
+ .debug_abbrev  0x00000000000033c2      0x101 libc/libk.a(stdio.o)
+ .debug_abbrev  0x00000000000034c3      0x140 libc/libk.a(vsprintf.o)
 
-.debug_line     0x0000000000000000     0x7209
- .debug_line    0x0000000000000000      0xaca init/init.o
- .debug_line    0x0000000000000aca     0x10d0 mm/mm.o
- .debug_line    0x0000000000001b9a     0x11a4 driver/driver.o
- .debug_line    0x0000000000002d3e      0x90d proc/proc.o
- .debug_line    0x000000000000364b      0xafe fs/fs.o
- .debug_line    0x0000000000004149     0x13de objs/impl.o
- .debug_line    0x0000000000005527     0x1059 tests/tests.o
- .debug_line    0x0000000000006580      0x4bd libc/libk.a(string.o)
- .debug_line    0x0000000000006a3d      0x1a2 libc/libk.a(stdio.o)
- .debug_line    0x0000000000006bdf      0x62a libc/libk.a(vsprintf.o)
+.debug_line     0x0000000000000000     0x7239
+ .debug_line    0x0000000000000000      0xace init/init.o
+ .debug_line    0x0000000000000ace     0x10d0 mm/mm.o
+ .debug_line    0x0000000000001b9e     0x11a4 driver/driver.o
+ .debug_line    0x0000000000002d42      0x939 proc/proc.o
+ .debug_line    0x000000000000367b      0xafe fs/fs.o
+ .debug_line    0x0000000000004179     0x13de objs/impl.o
+ .debug_line    0x0000000000005557     0x1059 tests/tests.o
+ .debug_line    0x00000000000065b0      0x4bd libc/libk.a(string.o)
+ .debug_line    0x0000000000006a6d      0x1a2 libc/libk.a(stdio.o)
+ .debug_line    0x0000000000006c0f      0x62a libc/libk.a(vsprintf.o)
 
-.debug_str      0x0000000000000000     0x9ef4
- .debug_str     0x0000000000000000     0x65ab init/init.o
-                                       0xd206 (size before relaxing)
- .debug_str     0x00000000000065ab      0x7af mm/mm.o
+.debug_str      0x0000000000000000     0x9efa
+ .debug_str     0x0000000000000000     0x65ba init/init.o
+                                       0xd215 (size before relaxing)
+ .debug_str     0x00000000000065ba      0x7af mm/mm.o
                                        0xc427 (size before relaxing)
- .debug_str     0x0000000000006d5a      0xf17 driver/driver.o
+ .debug_str     0x0000000000006d69      0xf17 driver/driver.o
                                       0x16c03 (size before relaxing)
- .debug_str     0x0000000000007c71      0x4ae proc/proc.o
-                                       0xa805 (size before relaxing)
- .debug_str     0x000000000000811f      0x5d5 fs/fs.o
+ .debug_str     0x0000000000007c80      0x4a5 proc/proc.o
+                                       0xa80b (size before relaxing)
+ .debug_str     0x0000000000008125      0x5d5 fs/fs.o
                                        0x7a67 (size before relaxing)
- .debug_str     0x00000000000086f4      0xec4 objs/impl.o
+ .debug_str     0x00000000000086fa      0xec4 objs/impl.o
                                       0x16bb0 (size before relaxing)
- .debug_str     0x00000000000095b8      0x72d tests/tests.o
+ .debug_str     0x00000000000095be      0x72d tests/tests.o
                                       0x11ee6 (size before relaxing)
- .debug_str     0x0000000000009ce5       0x80 libc/libk.a(string.o)
+ .debug_str     0x0000000000009ceb       0x80 libc/libk.a(string.o)
                                        0x2d04 (size before relaxing)
- .debug_str     0x0000000000009d65       0x2b libc/libk.a(stdio.o)
+ .debug_str     0x0000000000009d6b       0x2b libc/libk.a(stdio.o)
                                        0x3755 (size before relaxing)
- .debug_str     0x0000000000009d90      0x164 libc/libk.a(vsprintf.o)
+ .debug_str     0x0000000000009d96      0x164 libc/libk.a(vsprintf.o)
                                        0x2e5b (size before relaxing)
 
 .debug_macro    0x0000000000000000     0x3eb4

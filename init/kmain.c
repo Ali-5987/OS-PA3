@@ -96,8 +96,8 @@ void kmain ()
 	LOG_P ("Mounting initfs\n");
 	vfs_mount ("fd0", "/fd0", "fat12"); // mount the floppy disk as root fs
 
-	// LOG_P ("Initializing scheduler...\n");
-	// scheduler_init (); // Initialize the process scheduler
+	LOG_P ("Initializing scheduler...\n");
+	scheduler_init (); // Initialize the process scheduler
 
 #ifdef TESTING
 	LOG_P ("Running kernel tests...\n");

@@ -14,6 +14,7 @@ static process_t* current_proc = NULL;
 static thread_t* current_thread = NULL;
 static int current_pid=1;
 static int current_tid=1;
+static thread_t* queue[PROCESS_PRI_MAX+1];
 void process_create(process_t* process, const char* name, int32_t priority)
 {   process->state =1;
     process->Pid = current_pid;
@@ -134,11 +135,40 @@ void scheduler_init(void)
     kernel_thread->parent = kernel_process;
     kernel_thread->state = STATE_RUNNING;
     kernel_process->threads = kernel_thread;
-
+    kernel_process->state = STATE_RUNNING;
+    kernel_thread->tid = current_tid;
+    current_tid++;
+    kernel_thread->priority =5;
+    kernel_thread->kernel = NULL;
+    kernel_thread->trap_frame = NULL;
+    for (int i=0;i<PROCESS_PRI_MAX;i++)
+    queue[i] = NULL;
     current_proc = kernel_process;
     current_thread = kernel_thread;
 }
-void scheduler_tick(interrupt_context_t* context){}
+void scheduler_tick(interrupt_context_t* context)
+{
+    current_thread->trap_frame = context;
+    current_thread->time_slice--;
+    if (current_thread->time_slice>0)
+    return;
+    current_thread->time_slice = SLICE;
+    scheduler_post(current_thread);
+    thread_t* next_thread = NULL;
+    for (int i = PROCESS_PRI_MAX - 1; i >= 0; i--) 
+    {
+        if (queue[i] != NULL) 
+        {
+            next_thread = queue[i];
+            queue[i] = next_thread->next; 
+            next_thread->next = NULL;
+            break;
+        }
+    }
+    if (next_thread == NULL)
+    return;
+    scheduler_switch(next_thread);
+}
 void scheduler_switch(thread_t* next_thread){}
 void scheduler_post(thread_t* thread){}
 process_t* get_current_proc(void)

@@ -11,6 +11,7 @@
 #define PROCESS_PRI_MIN 0
 #define PROCESS_PRI_MAX 10
 #define PROCESS_PRI_DEFAULT 5
+#define SLICE 5
 #define STATE_TERMINATED -1
 #define STATE_READY 1
 #define STATE_BLOCKED 0
@@ -34,11 +35,11 @@ typedef struct thread
     uint32_t state;
     process_t* parent;
     uint32_t* kernel;
+    uint32_t time_slice;
     interrupt_context_t* trap_frame;
     struct thread_t* next;
 } thread_t;
 
- 
  void process_create(process_t* process, const char* name, int32_t priority);
  void process_destroy(process_t* process);
  int32_t process_spawn(const char* filename);

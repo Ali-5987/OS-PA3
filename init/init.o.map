@@ -132,30 +132,30 @@ LOAD build/load_descriptors.o
 .plt.sec
  *(.plt.sec)
 
-.text           0x0000000000000000      0xf63
+.text           0x0000000000000000      0xf9f
  *(.text .stub)
  .text          0x0000000000000000      0x1cf build/./gdt.o
                 0x0000000000000000                create_gdt_entry
                 0x000000000000007d                gdt_init_flat_protected
                 0x00000000000001c5                get_gdt_ptr
- .text          0x00000000000001cf      0x474 build/./kmain.o
+ .text          0x00000000000001cf      0x4b0 build/./kmain.o
                 0x00000000000001cf                kmain
- .text          0x0000000000000643      0x8fb build/./shell.o
-                0x0000000000000643                run_cmd
-                0x0000000000000ed5                shell
- .text          0x0000000000000f3e       0x25 build/load_descriptors.o
-                0x0000000000000f3e                load_gdt
-                0x0000000000000f5b                load_idt
+ .text          0x000000000000067f      0x8fb build/./shell.o
+                0x000000000000067f                run_cmd
+                0x0000000000000f11                shell
+ .text          0x0000000000000f7a       0x25 build/load_descriptors.o
+                0x0000000000000f7a                load_gdt
+                0x0000000000000f97                load_idt
  *(.gnu.warning)
 
 .fini
  *(SORT_NONE(.fini))
 
-.rodata         0x0000000000000000      0x6ef
+.rodata         0x0000000000000000      0x70b
  *(.rodata)
- .rodata        0x0000000000000000      0x2da build/./kmain.o
- *fill*         0x00000000000002da        0x2 
- .rodata        0x00000000000002dc      0x413 build/./shell.o
+ .rodata        0x0000000000000000      0x2f6 build/./kmain.o
+ *fill*         0x00000000000002f6        0x2 
+ .rodata        0x00000000000002f8      0x413 build/./shell.o
 
 .rodata1
  *(.rodata1)
@@ -377,36 +377,36 @@ LOAD build/load_descriptors.o
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0xe0f
+.debug_info     0x0000000000000000      0xe30
  *(.debug_info)
  .debug_info    0x0000000000000000      0x3bf build/./gdt.o
- .debug_info    0x00000000000003bf      0x3a0 build/./kmain.o
- .debug_info    0x000000000000075f      0x68a build/./shell.o
- .debug_info    0x0000000000000de9       0x26 build/load_descriptors.o
+ .debug_info    0x00000000000003bf      0x3c1 build/./kmain.o
+ .debug_info    0x0000000000000780      0x68a build/./shell.o
+ .debug_info    0x0000000000000e0a       0x26 build/load_descriptors.o
 
-.debug_abbrev   0x0000000000000000      0x4b3
+.debug_abbrev   0x0000000000000000      0x4db
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x15c build/./gdt.o
- .debug_abbrev  0x000000000000015c      0x17a build/./kmain.o
- .debug_abbrev  0x00000000000002d6      0x1c9 build/./shell.o
- .debug_abbrev  0x000000000000049f       0x14 build/load_descriptors.o
+ .debug_abbrev  0x000000000000015c      0x1a2 build/./kmain.o
+ .debug_abbrev  0x00000000000002fe      0x1c9 build/./shell.o
+ .debug_abbrev  0x00000000000004c7       0x14 build/load_descriptors.o
 
-.debug_line     0x0000000000000000      0xaca
+.debug_line     0x0000000000000000      0xace
  *(.debug_line)
  .debug_line    0x0000000000000000      0x1a9 build/./gdt.o
- .debug_line    0x00000000000001a9      0x314 build/./kmain.o
- .debug_line    0x00000000000004bd      0x5bf build/./shell.o
- .debug_line    0x0000000000000a7c       0x4e build/load_descriptors.o
+ .debug_line    0x00000000000001a9      0x318 build/./kmain.o
+ .debug_line    0x00000000000004c1      0x5bf build/./shell.o
+ .debug_line    0x0000000000000a80       0x4e build/load_descriptors.o
 
 .debug_frame
  *(.debug_frame)
 
-.debug_str      0x0000000000000000     0xd206
+.debug_str      0x0000000000000000     0xd215
  *(.debug_str)
  .debug_str     0x0000000000000000     0x31d1 build/./gdt.o
- .debug_str     0x00000000000031d1     0x5f42 build/./kmain.o
- .debug_str     0x0000000000009113     0x40af build/./shell.o
- .debug_str     0x000000000000d1c2       0x44 build/load_descriptors.o
+ .debug_str     0x00000000000031d1     0x5f51 build/./kmain.o
+ .debug_str     0x0000000000009122     0x40af build/./shell.o
+ .debug_str     0x000000000000d1d1       0x44 build/load_descriptors.o
 
 .debug_loc
  *(.debug_loc)
